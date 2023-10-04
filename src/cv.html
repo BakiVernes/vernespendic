@@ -164,6 +164,10 @@
 
       nextPage.setAttribute("data-current", null)
       currentPage.removeAttribute("data-current")
+
+			setTimeout(() => {
+				window.scrollTo({top: 0, behavior: "smooth"})
+			}, 500)
     }
   </script>
 </body>

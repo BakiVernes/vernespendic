@@ -1,0 +1,36 @@
+friends:
+  - name: Šaćirović Mirza
+    title: Senior Cloud Engineer at OpsGuru
+    picture: "https://media.licdn.com/dms/image/C4E03AQF3m-NLjpSp0g/profile-displayphoto-shrink_800_800/0/1590336639609?e=1701907200&v=beta&t=wGvV9obOfhmmq0r5lbs5TRKi1L7bILJb6twoWKFY0NY"
+    linkedin: "https://www.linkedin.com/in/mirza-%C5%A1a%C4%87irovi%C4%87-b25817141"
+    picture_alt: Fuad
+    testimony: Vernes isn't just a master of the Rails framework, he's also conquered the art of beard-growing and
+      bicep-bulking. While his head lacks coverage, his chin and muscles compensate exponentially. They say his
+      code is as robust as his gluteus, and let's face it, both are more than impressive!
+  - name: Sabljaković Harun
+    title: Fullstack Developer at WizardHealth (Teammate)
+    picture: "https://avatars.githubusercontent.com/u/50970645?v=4"
+    linkedin: "https://github.com/sabljak"
+    picture_alt: Sutko
+    testimony: I have never met someone like Vernes - always up for a party but also open for an interesting and long taboo-free conversation that leaves you thinking for days. Having him on the same team is an asset, whether it be for work or hangouts. His enthusiasm and positive vibes make the office environment a joy, and his knack for sparking thought-provoking discussions keeps things fresh and exciting.
+  - name: Fazlić Anaid
+    title: iOS Developer at etrade.ba
+    picture: "https://media.licdn.com/dms/image/D4D03AQGiV3zSVtB6fA/profile-displayphoto-shrink_800_800/0/1697097646140?e=1702512000&v=beta&t=zILJ9DeLJmCGzaAonkjvJ6nZIM4LA-vEQn_a5FWwZcc"
+    linkedin: "https://www.linkedin.com/in/anaid-fazlic-a23637154"
+    picture_alt: Rizvan
+    testimony: With Vernes by your side, you can bet that any gathering will be an absolute blast. I can't count the
+      number
+      of times his magnetic personality have turned an ordinary night into an unforgettable adventure. Armin is
+      not just the life of the party, he's the friend who makes every moment feel extraordinary.
+  - name: Šator Lana
+    title: Freelance Illustration/Concept Artist (Former Teammate)
+    picture: "https://cdnb.artstation.com/p/users/avatars/000/235/165/large/df10bbf5e7ddf79a45dd9876e14d6e6f.jpg?1668863216"
+    linkedin: "https://twitter.com/MugenMcFugen"
+    picture_alt: Lana
+    testimony: Good friend, eats very little but has big output. 9/10, would employ.
+  - name: Sabljaković Hamza
+    title: Lead System Architect (Former Teammate)
+    picture: "https://media.licdn.com/dms/image/C4D03AQHhcwHQ09R7uw/profile-displayphoto-shrink_800_800/0/1518792576569?e=1702512000&v=beta&t=1IbvVA1N6lMz9H2urGfX1IlHgM1pH1whJQ6eyiR83Go"
+    linkedin: "https://github.com/sabljakovich"
+    picture_alt: Baki
+    testimony: I highly recommend Baki as an exceptional Ruby on Rails Developer. His robust and clean solutions are matched by the enthusiasm and team spirit he brings to each project. Capable of both teamwork and being a one-man band when required, Bakito is a versatile engineer who positively impacts any development environment. His willingness to speak his mind adds to a transparent and productive workspace. In short, it's never a dull moment when working with him. 10 out of 10, would recommend

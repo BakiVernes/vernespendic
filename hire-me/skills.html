@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Happy Jekylling!"
+permalink: /hire-me/skills/
+---
+
+<main class="px-5 mt-10">
+  <h1 class="text-center text-4xl font-bold pb-10 border-b mb-10 tracking-tighter leading-tight">Skills</h1>
+
+  {% for skill in site.data.skills.skills %}
+    <h2 class="text-2xl font-bold mt-10 mb-3 tracking-tighter leading-tight">{{ skill.group }}:</h2>
+    <div class="flex gap-3">
+      {% for subgroup in skill.subgroups %}
+        <div>
+          <h3 class="text-lg font-bold mb-3">{{ subgroup.name }}</h3>
+          <ol>
+            {% for item in subgroup.items %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</main>

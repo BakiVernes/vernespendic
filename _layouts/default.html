@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}" data-mode="">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script src="https://kit.fontawesome.com/cd75f9f047.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic%20SC">
+</head>
+<body class="bg-background dark:bg-main-green text-main-green dark:text-fresh-green">
+  {{ navigation }}
+  <div class="absolute inset-0 z-0 animation-canvas pointer-events-none"></div>
+  {{ content }}
+</body>
+</html>

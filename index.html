@@ -1,22 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Vernes Pendić</title>
-  <link href="../dist/output.css" rel="stylesheet">
-</head>
-<body>
-  <main class="md:flex h-screen">
-    <div class="bg-purple-500 md:w-1/2 text-center h-1/2 md:h-screen w-full md:hover:w-2/3 transition-all ease-in-out">
-      <a href="../src/hire-me.html" class="block w-full h-full flex items-center justify-center text-5xl">
+---
+layout: default
+title: "Happy Jekylling!"
+---
+
+<main class="h-screen">
+  <h1 class="text-[5rem] text-center mt-48" style="font-family: 'Amatic SC'">
+    <div>Hi. I'm Vernes.</div>
+    <div id="container" class="relative h-16 flex justify-center">
+      Human
+    </div>
+  </h1>
+
+  <div class="md:flex pt-10">
+    <div class="text-center h-1/2 w-full">
+      <a href="/hire-me" class="hire-me btn--primary">
         Hire Me
       </a>
     </div>
-    <div class="bg-teal-300 text-amber-600 text-center w-full md:w-1/2 h-1/2 md:h-screen md:hover:w-2/3 transition-all ease-in-out">
-      <a href="admire-me.html" class="block w-full h-full flex items-center justify-center text-5xl">
+
+    <div class="text-center w-full h-1/2">
+      <a href="/admire-me" class="admire-me btn--primary">
         Admire Me
       </a>
     </div>
-  </main>
-</body>
-</html>
+  </div>
+</main>
+
+<template class="admire-tag"><span class="hire-animation">Friend</span></template>
+<template class="admire-tag"><span class="hire-animation">Youtuber</span></template>
+<template class="admire-tag"><span class="hire-animation">Weightlifter</span></template>
+
+<template class="hire-tag"><span class="hire-animation">Software Engineer</span></template>
+<template class="hire-tag"><span class="hire-animation">Renaissance Developer</span></template>
+
+
+<script>
+  document.querySelector(".hire-me").addEventListener("mouseover", () => {
+    showRandomElement("hire-tag")
+  })
+
+	document.querySelector(".admire-me").addEventListener("mouseover", () => {
+    showRandomElement("admire-tag")
+	})
+
+  function showRandomElement(classToShow) {
+		const itemsToShow = document.querySelectorAll(`.${classToShow}:not(.selected)`)
+		toggleSelected()
+
+		const template = itemsToShow[Math.floor(Math.random()*itemsToShow.length)]
+    template.classList.add("selected")
+    const extractedContent = document.importNode(template.content, true).querySelector("SPAN")
+
+    const container = document.getElementById("container")
+		container.innerHTML = ""
+
+		container.appendChild(extractedContent)
+  }
+
+  function toggleSelected() {
+		const elementToRemoveAnimationFrom = document.querySelector(".selected")
+		if (elementToRemoveAnimationFrom) {
+			elementToRemoveAnimationFrom.classList.remove("selected")
+		}
+  }
+</script>

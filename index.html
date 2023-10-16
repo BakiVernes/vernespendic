@@ -1,37 +1,36 @@
 ---
 layout: default
 title: "Happy Jekylling!"
+page: home
 ---
 
-<main class="h-screen">
-  <h1 class="text-[5rem] text-center mt-48" style="font-family: 'Amatic SC'">
+<main>
+  <h1 class="header">
     <div>Hi. I'm Vernes.</div>
     <div id="container" class="relative h-16 flex justify-center">
       Human
     </div>
   </h1>
 
-  <div class="md:flex pt-10">
-    <div class="text-center h-1/2 w-full">
-      <a href="/hire-me" class="hire-me btn--primary">
-        Hire Me
-      </a>
-    </div>
-
-    <div class="text-center w-full h-1/2">
-      <a href="/admire-me" class="admire-me btn--primary">
-        Admire Me
-      </a>
-    </div>
-  </div>
+  <p class="text-secondary-text text-center mt-20 relative z-10 text-xl" style="font-family: Roboto">
+    Passionate about making things.
+  </p>
 </main>
 
 <template class="admire-tag"><span class="hire-animation">Friend</span></template>
-<template class="admire-tag"><span class="hire-animation">Youtuber</span></template>
+<template class="admire-tag">
+  <span class="hire-animation">
+    <a href="https://www.youtube.com/@zGembo" target="_blank" class="cursor-pointer hover:text-link-hover inline-flex"><i class="fa-brands mr-4 mt-1 fa-youtube"></i>YouTuber</a>
+  </span>
+</template>
 <template class="admire-tag"><span class="hire-animation">Weightlifter</span></template>
 
 <template class="hire-tag"><span class="hire-animation">Software Engineer</span></template>
-<template class="hire-tag"><span class="hire-animation">Renaissance Developer</span></template>
+<template class="hire-tag">
+  <span class="hire-animation">
+    <a href="https://youtu.be/iqXjGiQ_D-A?si=aqsctEPXDfNt8MaH&t=1200" target="_blank" class="cursor-pointer hover:text-link-hover">Renaissance Developer</a>
+  </span>
+</template>
 
 
 <script>

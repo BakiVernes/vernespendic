@@ -4,13 +4,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <title>{{ page.title }} - {{ site.title }}</title>
+
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <script src="https://kit.fontawesome.com/cd75f9f047.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic%20SC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Average%20Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
-<body class="bg-background dark:bg-main-green text-main-green dark:text-fresh-green">
-  {{ navigation }}
+<body class="bg-background dark:bg-main-green h-[100px] text-main-green dark:text-fresh-green max-w-[1200px] mx-auto">
+  {% include navigation.html %}
   <div class="absolute inset-0 z-0 animation-canvas pointer-events-none"></div>
   {{ content }}
 </body>
+
+<script>
+	const callback = (entries, observer) => {
+		const entry = entries[0];
+
+		const navBar = document.querySelector('NAV');
+		navBar.children[0].classList.toggle('nav-scrolled', !entry.isIntersecting);
+	}
+
+	const options = {
+		rootMargin: "-60px 0px 0px 0px",
+		threshold: [1]
+	};
+
+	const io = new IntersectionObserver(callback, options);
+
+	const target = document.querySelector('BODY');
+	io.observe(target);
+</script>
 </html>

@@ -15,8 +15,29 @@ main.background:has(.admire-me:hover) {
 }
 
 .btn--primary {
+  @apply rounded-full text-secondary-text px-5 py-2 font-medium text-center cursor-pointer h-10;
+}
+
+.btn--primary--selected {
   background-color: rgba(255, 255, 255, 0.5);
-  @apply rounded-full shadow-2xl text-secondary-text px-5 py-2 font-medium text-center cursor-pointer h-10;
+}
+
+.nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  @apply shadow-md;
+}
+
+h2.header {
+  font-family: Average Sans;
+  @apply text-[50px] font-black leading-none relative z-10;
+}
+
+h1.header {
+  font-family: Average Sans;
+  @apply text-[100px] font-black leading-none relative z-10 text-center mt-36;
 }
 
 .hire-animation {
@@ -38,7 +59,7 @@ main.background:has(.admire-me:hover) {
 
 .animation-canvas {
   background-size: 200% 100%;
-  background-image: radial-gradient(circle, green, orange, purple);
+  background-image: radial-gradient(circle, green, orange, rgb(216, 162, 255));
   animation: gradientAnimation 10s linear infinite;
   color: white;
   height: 70%;

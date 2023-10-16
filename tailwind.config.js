@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         "main-green": "#015a4e",
+        "link-hover": "#017261",
         "background": "#ede7de",
         "fresh-green": "#8fdcc2",
         "secondary-text": "#4c6763"

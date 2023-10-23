@@ -5,7 +5,7 @@ permalink: /hire-me/
 page: hire
 ---
 
-<main class="z-10 relative">
+<main class="z-10 relative pb-20">
   <h1 class="header">
     I'm Vernes.
   </h1>
@@ -16,7 +16,7 @@ page: hire
     </div>
     <div>
       <h2 class="header">
-        I'm a Software Engineer working remotely from where it's currently the sunniest
+        I'm a Software Engineer working remotely from where it's currently the sunniest 😎
       </h2>
 
       <p class="text-secondary-text mt-10 relative z-10 text-xl" style="font-family: Roboto">
@@ -48,5 +48,65 @@ page: hire
         <div>15-17</div>
       </div>
     </div>
+  </div>
+
+  <div class="mx-28 mt-20">
+    <h2 class="header">
+      Let's work together if
+    </h2>
+    <div class="mt-10 rounded-xl flex overflow-hidden p-10 relative">
+      <div class="absolute inset-0 bg-white opacity-30"></div>
+
+      <div class="grid-cols-2 gap-5 grid">
+        {% for requirement in site.data.requirements.requirements %}
+          <div>
+            <h3 class="header">
+              {{ requirement.title }}
+            </h3>
+            <p class="mt-2">
+              {{ requirement.description }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mx-28 mt-20">
+    <h2 class="header">
+      My public work
+    </h2>
+
+    <ul class="grid grid-cols-2 gap-6">
+      <li class="transform transition-transform hover:translate-y-[-10px] mt-10 rounded-xl overflow-hidden relative">
+        <div class="absolute inset-0 bg-white opacity-30"></div>
+
+        <a href="https://github.com/BakiVernes" target="_target" class="md:p-10 p-5 block relative z-10">
+          <h3 class="header">
+            <i class="fa-brands fa-github"></i> My Github profile
+          </h3>
+
+          <p class="mt-3">
+            Most of my real work is done behind closed doors. But all of my open source contributions and projects can be found on my Github profile.
+          </p>
+        </a>
+      </li>
+
+      <li class="transform transition-transform hover:translate-y-[-10px] mt-10 rounded-xl overflow-hidden relative">
+        <div class="absolute inset-0 bg-white opacity-30"></div>
+
+        <a href="https://github.com/BakiVernes" target="_target" class="md:p-10 p-5 block relative z-10">
+          <h3 class="header">
+            <i class="fa-brands fa-github"></i> My Github profile
+          </h3>
+
+          <p class="mt-3">
+            Most of my real work is done behind closed doors. But all of my open source contributions and projects can be found on my Github profile.
+          </p>
+        </a>
+      </li>
+    </ul>
+
   </div>
 </main>

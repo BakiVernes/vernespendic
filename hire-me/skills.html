@@ -5,24 +5,238 @@ permalink: /hire-me/skills/
 page: skills
 ---
 
-<main>
+<main class="pb-20">
   <h1 class="header">Skills</h1>
 
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BakiVernes"/>
-
-  {% for skill in site.data.skills.skills %}
-    <h2 class="text-2xl font-bold mt-10 mb-3 tracking-tighter leading-tight">{{ skill.group }}:</h2>
-    <div class="flex gap-3">
-      {% for subgroup in skill.subgroups %}
-        <div>
-          <h3 class="text-lg font-bold mb-3">{{ subgroup.name }}</h3>
-          <ol>
-            {% for item in subgroup.items %}
-              <li>{{ item }}</li>
-            {% endfor %}
-          </ol>
-        </div>
-      {% endfor %}
+  <div class="flex items-start mx-36 gap-20 mt-20 relative z-10">
+    <div>
+      <i class="fa-solid fa-code text-[100px]"></i>
     </div>
-  {% endfor %}
+    <div>
+      <h2 class="header">
+        Code-agnostic mindset specialising in the Rails ecosystem
+      </h2>
+
+      <p class="text-secondary-text mt-10 relative z-10 text-xl" style="font-family: Roboto">
+        Over the past 8 years I've worked with C#, C++, Python, Javascript, but there is nothing like Ruby. Paired
+        with Rails it made life easier evey time I wanted to make something new.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-20 flex justify-between gap-10">
+    <div class="w-1/2 flex flex-col justify-between">
+      <img src="/assets/img/ruby.png" alt="ruby" class="w-20 h-20 mx-auto mt-10">
+
+      <div class="h-1/2">
+        <h3 class="header">
+          Ruby
+        </h3>
+        <p class="text-secondary-text mt-6 relative z-10 text-xl text-justify" style="font-family: Roboto">
+          Ruby is the language I used the most in the past couple of years. Used it in tandem with Rails, for Ruby-only
+          gem contributions, and scripting as well. More than the syntax I love the open source nature that surrounds it and the community as well.
+        </p>
+      </div>
+    </div>
+
+    <figure class="relative w-1/2 group">
+      <img src="/assets/img/matz.jpg" alt="matz" class="rounded-lg">
+      <figcaption class="rounded px-3 py-2 bg-main-green mb-3 ml-3 bottom-0 hidden text-white absolute group-hover:block transition-all">
+        Matz and me at EuRuKo - Vienna 2018
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="mt-20 flex justify-between gap-10">
+    <figure class="relative w-1/2 group">
+      <pre>
+        <code>
+          {
+            "dependencies": {
+              "@hotwired/stimulus": "^3.2.1",
+              "@hotwired/turbo-rails": "^7.2.0",
+              "@rails/actioncable": "^7.0.0",
+              "esbuild": "^0.14.0",
+              "turbo_power": "^0.3.1",
+              "tailwindcss": "^3.3.3"
+            }
+          }
+        </code>
+      </pre>
+    </figure>
+
+    <div class="w-1/2 flex flex-col justify-between">
+      <img src="/assets/img/js.png" alt="js" class="w-20 h-20 mx-auto mt-10">
+
+      <div>
+        <h3 class="header">
+          Javascript
+        </h3>
+        <p class="text-secondary-text mt-6 relative z-10 text-xl text-justify" style="font-family: Roboto">
+          My JS journey started with jQuery early in university. As javascript evolved so did my understanding of it. My workplace
+          demanded a whole Rails app rewrite from jQuery to vanilla JS. This strengthened my foundational knowledge and down the road
+          helped me easily jump in to any javascript flavor like typescript or frameworks like Vue.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-20 flex justify-between gap-10">
+    <div class="w-1/2 flex flex-col justify-between">
+      <div class="flex justify-center gap-3 mt-10">
+        <img src="/assets/img/html.png" alt="html" class="w-20 h-20">
+        <img src="/assets/img/css.png" alt="css" class="w-20 h-20">
+      </div>
+
+      <div class="mt-10">
+        <h3 class="header">
+          HTML and CSS
+        </h3>
+        <p class="text-secondary-text mt-6 relative z-10 text-xl text-justify" style="font-family: Roboto">
+          Every web devs bread and butter. Over the years I have recognized the importance of semantic HTML not just for
+          screen readers but for the easier understanding of my teammates. Adding the ever important sprinkle of TailwindCSS
+          on top, it made prototyping layouts faster and easier then ever.
+        </p>
+      </div>
+    </div>
+
+    <pre>
+      <code>
+        <main>
+          <h1>This is it</h1>
+          <p>This webpage was done using Tailwind</p>
+        </main>
+      </code>
+    </pre>
+  </div>
+
+  <div class="mt-20 flex justify-between gap-10">
+    <figure class="relative w-1/2 group">
+      <pre>
+        <code>
+          SELECT email from good_developers
+
+          ----------------------------------
+          | email
+          ---------------
+        1 | vernes@hey.com
+        2 |
+        </code>
+      </pre>
+    </figure>
+
+    <div class="w-1/2 flex flex-col justify-between">
+      <img src="/assets/img/sql.png" alt="sql" class="w-20 h-20 mx-auto mt-10">
+
+      <div>
+        <h3 class="header">
+          Storage
+        </h3>
+        <p class="text-secondary-text mt-6 relative z-10 text-xl text-justify" style="font-family: Roboto">
+          Mostly worked with Postgres for production environments. Locally have used MySQL, SQLite. For background job
+          processing exclusively handled Redis paired with Sidekiq and GoodJob. As I like and operate with everything in
+          an apps stack, storage is the least interesting to me.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex items-start mx-36 gap-20 mt-40 relative z-10">
+    <div>
+      <i class="fa-solid fa-handshake text-[100px]"></i>
+    </div>
+    <div>
+      <h2 class="header">
+        Working with people
+      </h2>
+
+      <p class="text-secondary-text mt-10 relative z-10 text-xl" style="font-family: Roboto">
+        Often overlooked, particularly by good coders, soft skills are a thing of beauty and nuance. You cannot acquire
+        them with some tutorial on Udemy. My journey from a shy coder to a good teammate went from being mentored by the best
+        to mentoring, presenting and writing code in a way that would be understandable down the road for anyone.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-20 flex gap-10 justify-between">
+    <div class="w-1/3">
+      <a href="https://www.wizardhealth.co/?lang=en" target="_blank">
+        <img src="/assets/img/wizard.png" alt="wizard" class="w-32 h-32 mx-auto">
+      </a>
+      <p class="text-secondary-text mt-10 text-justify relative z-10 text-xl" style="font-family: Roboto">
+        Working with every single one of my teammates has been a blast. Discovering how to bridge misunderstandings
+        and each others shortcomings we glued together perfectly. Today after years of working together you could pair
+        any of us together to work on something and expect great results.
+      </p>
+    </div>
+
+    <figure class="relative group w-2/3">
+      <img src="/assets/img/team.jpg" alt="wizardhealth" class="rounded-lg">
+      <figcaption class="rounded px-3 py-2 bg-main-green mb-3 ml-3 bottom-0 hidden text-white absolute group-hover:block transition-all">
+        WizardHealth team - always up for my shennanigans
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="flex gap-16 mt-20">
+    <figure class="group w-1/4 relative">
+      <img src="/assets/img/mid.jpg" alt="cat" class="rounded-lg h-full">
+      <figcaption class="rounded px-3 py-2 bg-main-green mb-3 ml-3 bottom-0 hidden text-white absolute group-hover:block transition-all">
+        My cat Mid and me
+      </figcaption>
+    </figure>
+
+    <div class="w-3/4">
+      <div class="text-center">
+        <i class="fa-solid fa-earth-europe text-[100px]"></i>
+      </div>
+      <p class="text-secondary-text mt-10 text-justify relative z-10 text-xl" style="font-family: Roboto">
+        Natively speaking Bosnian, Serbian, and Croatian, I possess a deep-rooted connection to the rich tapestry of
+        cultures and traditions these languages represent. My fluency in English is near-native, allowing me to effortlessly
+        bridge cultures and navigate diverse settings. Since I was born in Germany, German, too, is a language I am familiar
+        with; I can comprehend everything and hold basic conversations with ease. Currently working on my Italian.
+        <br>
+        <br>
+        Yet, my linguistic talents don't stop with human languages. If you take a glance at the picture beside, you'll see
+        I also have a special knack for communicating with feline companions. My cat would vouch for that, if only she could speak human.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex items-start mx-36 gap-20 mt-20 relative z-10">
+    <div>
+      <h2 class="header">
+        My other skills and interests
+      </h2>
+
+      <p class="text-secondary-text mt-10 relative z-10 text-xl" style="font-family: Roboto">
+        I have a good understanding of video editing particularly in Davinci Resolve. Photoshop is near and dear although
+        for basic work or personal stuff (I am no picasso though 😅). My other interests include:
+        <br>
+        <br>
+        <li>
+          Open Source Contributions. Even though I did release a couple of OS packages myself I mostly enjoy peeking
+          into what other people have done and contribute there. In my opinion this is where you learn most. Interacting
+          with people you don't interact on a daily basis can yield new knowledge and friendships.
+        </li>
+        <br>
+        <br>
+        <li>
+          Data Science and Machine Learning. Ever since the AI boom with ChatGPT I've been having an itch to jump into
+          studying about this subject. Have completed the Zero To Mastery course on Data Science and Machine Learning
+          but have yet to work on anything real. Keen to jump in.
+        </li>
+        <br>
+        <br>
+
+        <li>
+          When working on some new feature I don't like to be just the coder. I like to be involved in feature development
+          from scratch. That means covering the business decisions behind why we need the feature and analysing how
+          it's gonna impact the end user.
+        </li>
+
+      </p>
+    </div>
+  </div>
 </main>

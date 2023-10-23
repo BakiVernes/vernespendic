@@ -14,7 +14,7 @@
       <li><a href="/admire-me" class="admire-me btn--primary">Admire Me</a></li>
     {% endif %}
 
-    {% if page.page == "hire" or page.page == "cv" or page.page == "skills" or page.page == "testimonials" or page.page == "education" %}
+    {% if page.page == "hire" or page.page == "cv" or page.page == "skills" or page.page == "testimonials" or page.page == "achievements" %}
       <li>
         {% if page.page == "hire" %}
           <a href="/hire-me" class="hire-me btn--primary btn--primary--selected">
@@ -45,12 +45,12 @@
         {% endif %}
           Skills</a></li>
       <li>
-        {% if page.page == "education" %}
-          <a href="/hire-me/education" class="hire-me btn--primary btn--primary--selected">
+        {% if page.page == "achievements" %}
+          <a href="/hire-me/achievements" class="hire-me btn--primary btn--primary--selected">
         {% else %}
-          <a href="/hire-me/education" class="hire-me btn--primary">
+          <a href="/hire-me/achievements" class="hire-me btn--primary">
         {% endif %}
-          Education</a></li>
+            Achievements</a></li>
       <li><a href="https://dev.to/bakivernes" target="_blank" class="hire-me btn--primary">Blog</a></li>
     {% endif %}
   </ul>

@@ -8,8 +8,8 @@ page: skills
 <main class="pb-20">
   <h1 class="header">Skills</h1>
 
-  <div class="flex items-start mx-36 gap-20 mt-20 relative z-10">
-    <div>
+  <div class="flex items-start mx-5 sm:mx-36 gap-20 mt-10 sm:mt-20 relative z-10">
+    <div class="hidden md:block">
       <i class="fa-solid fa-code text-[100px]"></i>
     </div>
     <div>
@@ -24,8 +24,8 @@ page: skills
     </div>
   </div>
 
-  <div class="mt-20 flex justify-between gap-10">
-    <div class="w-1/2 flex flex-col justify-between">
+  <div class="mt-10 sm:mt-20 sm:flex mx-5 sm:mx-0 justify-between gap-10">
+    <div class="sm:w-1/2 flex flex-col justify-between">
       <img src="/assets/img/ruby.png" alt="ruby" class="w-20 h-20 mx-auto mt-10">
 
       <div class="h-1/2">
@@ -39,7 +39,7 @@ page: skills
       </div>
     </div>
 
-    <figure class="relative w-1/2 group">
+    <figure class="relative sm:w-1/2 group">
       <img src="/assets/img/matz.jpg" alt="matz" class="rounded-lg">
       <figcaption class="rounded px-3 py-2 bg-main-green mb-3 ml-3 bottom-0 hidden text-white absolute group-hover:block transition-all">
         Matz and me at EuRuKo - Vienna 2018
@@ -47,22 +47,32 @@ page: skills
     </figure>
   </div>
 
-  <div class="mt-20 flex justify-between gap-10">
+  <div class="mt-36 flex justify-between gap-10">
     <figure class="relative w-1/2 group">
-      <pre>
-        <code>
-          {
-            "dependencies": {
-              "@hotwired/stimulus": "^3.2.1",
-              "@hotwired/turbo-rails": "^7.2.0",
-              "@rails/actioncable": "^7.0.0",
-              "esbuild": "^0.14.0",
-              "turbo_power": "^0.3.1",
-              "tailwindcss": "^3.3.3"
-            }
-          }
-        </code>
-      </pre>
+      <div class="rounded">
+        <div class="border-b flex gap-2 items-center bg-main-green p-3 rounded-t">
+          <span class="h-3 w-3 rounded-full bg-red-500"></span>
+          <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+          <span class="h-3 w-3 rounded-full bg-green-600"></span>
+
+        </div>
+        <pre class="border-b border-x border-main-green">
+          <code class="text-main-green">
+      // What I use on the daily
+
+      {
+        "dependencies": {
+          "@hotwired/stimulus": "^3.2.1",
+          "@hotwired/turbo-rails": "^7.2.0",
+          "@rails/actioncable": "^7.0.0",
+          "esbuild": "^0.14.0",
+          "turbo_power": "^0.3.1",
+          "tailwindcss": "^3.3.3"
+        }
+      }
+          </code>
+        </pre>
+      </div>
     </figure>
 
     <div class="w-1/2 flex flex-col justify-between">
@@ -100,29 +110,68 @@ page: skills
       </div>
     </div>
 
-    <pre>
-      <code>
-        <main>
-          <h1>This is it</h1>
-          <p>This webpage was done using Tailwind</p>
-        </main>
-      </code>
-    </pre>
+    <div class="mx-auto bg-white rounded-lg hover:shadow-xl transition-shadow flex justify-center">
+      <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+          <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Done in a minute</h2>
+        </div>
+
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <form class="space-y-6" action="#" method="POST">
+            <div>
+              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+              <div class="mt-2">
+                <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-green sm:text-sm sm:leading-6">
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between">
+                <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                <div class="text-sm">
+                  <a href="#" class="font-semibold text-main-green hover:text-link-hover">Forgot password?</a>
+                </div>
+              </div>
+              <div class="mt-2">
+                <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-green sm:text-sm sm:leading-6">
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="flex w-full justify-center rounded-md bg-main-green px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-link-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-green">Sign in</button>
+            </div>
+          </form>
+
+          <p class="mt-10 text-center text-sm text-gray-500">
+            Not a member?
+            <a href="#" class="font-semibold leading-6 text-main-green hover:text-link-hover">Start a 14 day free trial</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="mt-20 flex justify-between gap-10">
     <figure class="relative w-1/2 group">
-      <pre>
-        <code>
-          SELECT email from good_developers
+      <div class="rounded">
+        <div class="border-b flex gap-2 items-center bg-main-green p-3 rounded-t">
+          <span class="h-3 w-3 rounded-full bg-red-500"></span>
+          <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+          <span class="h-3 w-3 rounded-full bg-green-600"></span>
 
-          ----------------------------------
-          | email
-          ---------------
-        1 | vernes@hey.com
-        2 |
-        </code>
-      </pre>
+        </div>
+        <pre class="border-b border-x border-main-green">
+          <code class="text-main-green">
+      SELECT email from good_developers
+
+      ----------------------------------
+      | email
+      ---------------
+    1 | vernes@hey.com
+    2 |
+          </code>
+        </pre>
+      </div>
     </figure>
 
     <div class="w-1/2 flex flex-col justify-between">
@@ -130,7 +179,7 @@ page: skills
 
       <div>
         <h3 class="header">
-          Storage
+          Database
         </h3>
         <p class="text-secondary-text mt-6 relative z-10 text-xl text-justify" style="font-family: Roboto">
           Mostly worked with Postgres for production environments. Locally have used MySQL, SQLite. For background job
@@ -192,8 +241,7 @@ page: skills
         <i class="fa-solid fa-earth-europe text-[100px]"></i>
       </div>
       <p class="text-secondary-text mt-10 text-justify relative z-10 text-xl" style="font-family: Roboto">
-        Natively speaking Bosnian, Serbian, and Croatian, I possess a deep-rooted connection to the rich tapestry of
-        cultures and traditions these languages represent. My fluency in English is near-native, allowing me to effortlessly
+        Natively speaking Bosnian, Serbian, and Croatian. My fluency in English is near-native, allowing me to effortlessly
         bridge cultures and navigate diverse settings. Since I was born in Germany, German, too, is a language I am familiar
         with; I can comprehend everything and hold basic conversations with ease. Currently working on my Italian.
         <br>

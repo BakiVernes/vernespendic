@@ -17,11 +17,19 @@
 </body>
 
 <script>
+  function showMenu() {
+		const navigation = document.getElementById("navigation")
+
+		navigation.classList.toggle("hidden")
+		navigation.classList.toggle("flex")
+    document.body.classList.toggle("fixed")
+  }
+
 	const callback = (entries, observer) => {
 		const entry = entries[0];
 
 		const navBar = document.querySelector('NAV');
-		navBar.children[0].classList.toggle('nav-scrolled', !entry.isIntersecting);
+		navBar.children[1].classList.toggle('nav-scrolled', !entry.isIntersecting);
 	}
 
 	const options = {
@@ -31,7 +39,7 @@
 
 	const io = new IntersectionObserver(callback, options);
 
-	const target = document.querySelector('BODY');
+	const target = document.querySelector('H1');
 	io.observe(target);
 </script>
 </html>

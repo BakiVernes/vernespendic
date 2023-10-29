@@ -1,9 +1,15 @@
-<button class="absolute top-0 right-0 z-50 p-4 sm:hidden inline-block" onclick="showMenu()">
-  <i class="fa-solid fa-bars text-[40px]"></i>
-</button>
+<div class="fixed bottom-0 inset-x-0 z-50 md:hidden block p-5">
+  <button class="rounded-full w-12 h-12 justify-center text-main-green flex items-center bg-[rgba(237,231,222,0.5)] shadow-md backdrop-blur ml-auto block shadow-lg" onclick="showMenu()">
+    <i class="fa-solid fa-bars block text-2xl"></i>
+  </button>
+</div>
 
-<nav id="navigation" class="inset-0 sm:inset-x-0 sm:bottom-auto sm:top-3 fixed sm:rounded-lg w-full sm:w-auto sm:flex hidden justify-center z-50">
-  <button class="absolute top-0 right-0 z-[51] p-4 sm:hidden inline-block" onclick="showMenu()">
+{% if page.page == "home" %}
+<nav id="navigation" class="touch-none inset-0 sm:inset-x-0 sm:bottom-auto sm:top-3 fixed sm:rounded-lg w-full flex-col md:flex-row sm:w-auto md:flex hidden justify-between z-50">
+{% else %}
+<nav id="navigation" class="touch-none inset-0 sm:inset-x-0 sm:bottom-auto sm:top-3 fixed sm:rounded-lg w-full sm:w-auto justify-center md:flex hidden z-50">
+{% endif %}
+  <button class="absolute bottom-0 right-0 z-[51] p-4 md:hidden inline-block" onclick="showMenu()">
     <i class="fa-solid fa-times text-[40px]"></i>
   </button>
 
@@ -61,4 +67,36 @@
             Achievements</a></li>
     {% endif %}
   </ul>
+
+  {% if page.page == "home" %}
+<!--    <a href="/hire-me"-->
+<!--       class="w-32 self-center bg-white bg-opacity-50 tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:border-mian-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 inline-flex items-center">-->
+<!--      <span class="mx-auto">Hire Now</span>-->
+<!--    </a>-->
+
+    <ul class="text-4xl flex items-center gap-5 pr-5">
+      <li><a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146"
+                          class="text-[#0072b1] hover:cursor-pointer"><i class="fa-brands fa-linkedin"></i></a>
+      </li>
+      <li><a target="_blank" href="https://github.com/BakiVernes"
+                          class="text-black hover:cursor-pointer"><i
+          class="fa-brands fa-github"></i></a></li>
+      <li><a target="_blank" href="https://twitter.com/gembo_z"
+                          class="text-[#26a7de] hover:cursor-pointer"><i class="fa-brands fa-twitter"></i></a>
+      </li>
+      <li><a target="_blank" href="https://www.instagram.com/zgembac/"
+                          class="instagram hover:cursor-pointer"><i
+          class="fa-brands fa-instagram"></i></a></li>
+      <li><a target="_blank" href="https://www.facebook.com/vernes.pendic/"
+                          class="text-[#4267B2] hover:cursor-pointer"><i class="fa-brands fa-facebook"></i></a>
+      </li>
+
+      <li>
+        <label class="toggle cursor-pointer">
+          <i class="fa-solid fa-moon"></i>
+          <input type="checkbox" onchange="toggleDarkMode(this)" id="darkmode-toggle">
+        </label>
+      </li>
+    </ul>
+  {% endif %}
 </nav>

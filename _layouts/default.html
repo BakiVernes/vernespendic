@@ -3,26 +3,32 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="description" content="Vernes: Experienced Software Engineer with over 7 years of expertise. Dive deep into a portfolio showcasing prowess in Rails, frontend delights, and robust backend solutions. Let's build something great together!">
+  <meta name="author" content="Vernes Pendić">
   <title>{{ page.title }} - {{ site.title }}</title>
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <script src="https://kit.fontawesome.com/cd75f9f047.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Average%20Sans">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
-<body class="bg-background dark:bg-main-green h-[100px] text-main-green dark:text-fresh-green max-w-[1200px] mx-auto">
+<body class="transition-all bg-background dark:bg-main-green h-[100px] text-main-green max-w-[1500px] dark:text-fresh-green mx-auto">
   {% include navigation.html %}
   <div class="absolute inset-0 z-0 animation-canvas pointer-events-none"></div>
   {{ content }}
 </body>
 
 <script>
+  function toggleDarkMode(checkbox) {
+    const html = document.querySelector('HTML')
+    const mode = checkbox.checked ? 'dark' : ''
+    html.dataset.mode = mode
+  }
+
   function showMenu() {
 		const navigation = document.getElementById("navigation")
 
 		navigation.classList.toggle("hidden")
 		navigation.classList.toggle("flex")
-    document.body.classList.toggle("fixed")
+    navigation.classList.toggle("nav-scrolled")
   }
 
 	const callback = (entries, observer) => {

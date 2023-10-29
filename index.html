@@ -1,33 +1,43 @@
 ---
 layout: default
-title: "Happy Jekylling!"
 page: home
 ---
 
-<main class="index h-screen flex flex-col justify-center items-center">
-  <h1>
-    <div>Hi. I'm Vernes.</div>
-    <div id="container" class="relative h-16 flex justify-center">
-      Human
-    </div>
-  </h1>
+<main class="index h-screen flex flex-col lg:flex-row gap-10 items-center mx-2 md:mx-5">
+  <div class="flex flex-col relative justify-center w-full gap-5 lg:w-1/2 order-2 lg:order-none">
+    <h1 class="lg:text-start text-center">
+      <div>Hi. I'm Vernes.</div>
+      <div id="container" class="hire-animation">
+        Human
+      </div>
+    </h1>
 
-  <p class="text-secondary-text text-center mt-20 relative z-10 text-xl" style="font-family: Roboto">
-    Passionate about making things.
-  </p>
+    <p class="text-secondary-text text-center 2xl:w-2/3 order-3 lg:order-none lg:text-start relative z-10 text-base lg:text-xl lg:ml-1">
+      Passionate about making things. Full-stacked with Rails, Hotwired, Stimulus, Tailwind, and ideas.
+      Explore my latest digital adventures here.
+    </p>
+
+<!--    <a href="/hire-me"-->
+<!--       class="w-32 z-[51] cat self-center bg-white bg-opacity-50 tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:border-mian-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 inline-flex items-center">-->
+<!--      <span class="mx-auto">Hire Now</span>-->
+<!--    </a>-->
+  </div>
+  <div class="relative w-full md:w-1/2 order-1 lg:order-none mt-2 md:mt-24 lg:mt-0">
+    <iframe class="shadow-2xl w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/O7RCdS9KnRE?si=U8yL_qPI9pkrYQXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
 </main>
 
-<template class="admire-tag"><span class="hire-animation">Friend</span></template>
+<template class="admire-tag"><span>Friend</span></template>
 <template class="admire-tag">
-  <span class="hire-animation">
+  <span>
     <a href="https://www.youtube.com/@zGembo" target="_blank" class="cursor-pointer hover:text-link-hover inline-flex"><i class="fa-brands mr-4 mt-1 fa-youtube"></i>YouTuber</a>
   </span>
 </template>
-<template class="admire-tag"><span class="hire-animation">Weightlifter</span></template>
+<template class="admire-tag"><span>Weightlifter</span></template>
 
-<template class="hire-tag"><span class="hire-animation">Software Engineer</span></template>
+<template class="hire-tag"><span>Software Engineer</span></template>
 <template class="hire-tag">
-  <span class="hire-animation">
+  <span>
     <a href="https://youtu.be/iqXjGiQ_D-A?si=aqsctEPXDfNt8MaH&t=1200" target="_blank" class="cursor-pointer hover:text-link-hover">Renaissance Developer</a>
   </span>
 </template>
@@ -37,6 +47,10 @@ page: home
   document.querySelector(".hire-me").addEventListener("mouseover", () => {
     showRandomElement("hire-tag")
   })
+
+	// document.querySelector(".cat").addEventListener("mouseover", () => {
+	// 	showRandomElement("hire-tag")
+	// })
 
 	document.querySelector(".admire-me").addEventListener("mouseover", () => {
     showRandomElement("admire-tag")
@@ -51,9 +65,12 @@ page: home
     const extractedContent = document.importNode(template.content, true).querySelector("SPAN")
 
     const container = document.getElementById("container")
+    container.classList.remove("hire-animation")
 		container.innerHTML = ""
 
 		container.appendChild(extractedContent)
+		container.offsetWidth // Trigger reflow
+    container.classList.add("hire-animation")
   }
 
   function toggleSelected() {

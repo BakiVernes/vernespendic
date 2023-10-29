@@ -1,19 +1,15 @@
-<div class="fixed bottom-0 inset-x-0 z-50 md:hidden block p-5">
-  <button class="rounded-full w-12 h-12 justify-center text-main-green flex items-center bg-[rgba(237,231,222,0.5)] shadow-md backdrop-blur ml-auto block shadow-lg" onclick="showMenu()">
+<div class="fixed bottom-0 inset-x-0 z-[51] md:hidden block p-5">
+  <button class="rounded-full w-12 h-12 justify-center text-main-green flex items-center bg-[rgba(237,231,222,0.5)] shadow-md backdrop-blur ml-auto block shadow-lg" onclick="showMenu(this)">
     <i class="fa-solid fa-bars block text-2xl"></i>
   </button>
 </div>
 
 {% if page.page == "home" %}
-<nav id="navigation" class="touch-none inset-0 sm:inset-x-0 sm:bottom-auto sm:top-3 fixed sm:rounded-lg w-full flex-col md:flex-row sm:w-auto md:flex hidden justify-between z-50">
+<nav id="navigation" class="touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full flex-col md:flex-row sm:w-auto md:flex hidden gap-36 md:gap-0 md:justify-between z-50">
 {% else %}
-<nav id="navigation" class="touch-none inset-0 sm:inset-x-0 sm:bottom-auto sm:top-3 fixed sm:rounded-lg w-full sm:w-auto justify-center md:flex hidden z-50">
+<nav id="navigation" class="touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full sm:w-auto justify-center md:flex hidden z-50">
 {% endif %}
-  <button class="absolute bottom-0 right-0 z-[51] p-4 md:hidden inline-block" onclick="showMenu()">
-    <i class="fa-solid fa-times text-[40px]"></i>
-  </button>
-
-  <ul class="flex w-full sm:w-auto sm:flex-row flex-col items-center gap-10 pt-24 sm:pt-5 sm:px-5 sm:gap-3 sm:rounded-full p-5 transition-all">
+  <ul class="flex w-full sm:w-auto md:flex-row flex-col items-center gap-10 pt-24 md:pt-5 sm:px-5 md:gap-3 sm:rounded-full p-5 transition-all">
     <li>
       {% if page.page == "home" %}
         <a href="/" class="btn--primary btn--primary--selected">
@@ -43,7 +39,7 @@
         {% else %}
           <a href="/hire-me/cv" class="hire-me btn--primary">
         {% endif %}
-          Curriculum Vitae</a></li>
+          Resume</a></li>
       <li>
         {% if page.page == "testimonials" %}
           <a href="/hire-me/testimonials" class="hire-me btn--primary btn--primary--selected">
@@ -69,26 +65,21 @@
   </ul>
 
   {% if page.page == "home" %}
-<!--    <a href="/hire-me"-->
-<!--       class="w-32 self-center bg-white bg-opacity-50 tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:border-mian-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 inline-flex items-center">-->
-<!--      <span class="mx-auto">Hire Now</span>-->
-<!--    </a>-->
-
-    <ul class="text-4xl flex items-center gap-5 pr-5">
+    <ul class="text-4xl mx-auto md:mx-0 text-main-green flex items-center gap-5 md:pr-5">
       <li><a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146"
-                          class="text-[#0072b1] hover:cursor-pointer"><i class="fa-brands fa-linkedin"></i></a>
+                          class="hover:cursor-pointer"><i class="fa-brands fa-linkedin"></i></a>
       </li>
       <li><a target="_blank" href="https://github.com/BakiVernes"
-                          class="text-black hover:cursor-pointer"><i
+                          class="hover:cursor-pointer"><i
           class="fa-brands fa-github"></i></a></li>
       <li><a target="_blank" href="https://twitter.com/gembo_z"
-                          class="text-[#26a7de] hover:cursor-pointer"><i class="fa-brands fa-twitter"></i></a>
+                          class="hover:cursor-pointer"><i class="fa-brands fa-twitter"></i></a>
       </li>
       <li><a target="_blank" href="https://www.instagram.com/zgembac/"
                           class="instagram hover:cursor-pointer"><i
           class="fa-brands fa-instagram"></i></a></li>
       <li><a target="_blank" href="https://www.facebook.com/vernes.pendic/"
-                          class="text-[#4267B2] hover:cursor-pointer"><i class="fa-brands fa-facebook"></i></a>
+                          class="hover:cursor-pointer"><i class="fa-brands fa-facebook"></i></a>
       </li>
 
       <li>

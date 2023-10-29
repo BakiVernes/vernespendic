@@ -29,11 +29,12 @@ main.background:has(.admire-me:hover) {
 }
 
 .btn--primary {
-  @apply rounded-full text-secondary-text text-2xl sm:text-base px-8 py-3 sm:px-5 sm:py-2 font-medium text-center cursor-pointer;
+  @apply rounded-full text-main-green text-2xl md:text-base px-8 py-3 md:px-5 md:py-2 font-medium text-center cursor-pointer;
 }
 
 p {
   font-family: serat;
+  @apply sm:text-lg lg:text-xl z-10 relative text-secondary-text mt-5 xl:mt-10 text-sm;
 }
 
 .btn--primary--selected {
@@ -51,12 +52,12 @@ h3.header {
 
 h2.header {
   font-family: seratBold;
-  @apply sm:text-[50px] text-[30px] font-black leading-[1.2] relative z-10;
+  @apply lg:text-[50px] text-[30px] font-black leading-[1.2] relative z-10;
 }
 
 h1.header {
   font-family: seratBold;
-  @apply text-[75px] sm:text-[100px] font-black leading-none relative z-10 text-center mt-16 md:mt-28 md:mt-36;
+  @apply text-[50px] md:text-[75px] sm:text-[100px] font-black leading-none relative z-10 text-center mt-16 md:mt-28 md:mt-36;
 }
 
 .index h1 {
@@ -118,10 +119,6 @@ label > input[type="checkbox"] {
 label > input[type="checkbox"]:checked {
 }
 
-.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  -webkit-background-clip: text;
-  /* Also define standard property for compatibility */
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.html5-video-player, .player-container {
+  @apply rounded-xl aspect-video w-full h-full;
 }

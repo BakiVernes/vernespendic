@@ -12,18 +12,33 @@ page: home
       </div>
     </h1>
 
-    <p class="text-secondary-text text-center 2xl:w-2/3 order-3 lg:order-none lg:text-start relative z-10 text-base lg:text-xl lg:ml-1">
+    <p class="text-secondary-text text-center 2xl:w-2/3 order-3 lg:order-none lg:text-start relative z-10 text-base lg:text-xl">
       Passionate about making things. Full-stacked with Rails, Hotwired, Stimulus, Tailwind, and ideas.
       Explore my latest digital adventures here.
     </p>
 
-<!--    <a href="/hire-me"-->
-<!--       class="w-32 z-[51] cat self-center bg-white bg-opacity-50 tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:border-mian-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 inline-flex items-center">-->
-<!--      <span class="mx-auto">Hire Now</span>-->
-<!--    </a>-->
+    <a href="/hire-me"
+       class="w-64 lg:order-none order-4 self-center mt-10 md:mt-0 lg:self-start cat bg-white bg-opacity-50 tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 md:py-4 md:px-8 inline-flex items-center">
+      <span class="mx-auto">Hire Now</span>
+    </a>
   </div>
   <div class="relative w-full md:w-1/2 order-1 lg:order-none mt-2 md:mt-24 lg:mt-0">
-    <iframe class="shadow-2xl w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/O7RCdS9KnRE?si=U8yL_qPI9pkrYQXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <div class="video-card shadow-2xl w-full aspect-video rounded-xl cursor-pointer">
+      <div class="video-list-item youtube-player rounded-xl" data-id="O7RCdS9KnRE">
+        <img src="https://img.youtube.com/vi/O7RCdS9KnRE/sddefault.jpg" class="rounded-xl w-full"
+             srcset="https://img.youtube.com/vi/O7RCdS9KnRE/maxresdefault.jpg 1280w,
+                    https://img.youtube.com/vi/O7RCdS9KnRE/sddefault.jpg 640w,
+                    https://img.youtube.com/vi/O7RCdS9KnRE/mqdefault.jpg 480w,
+                    https://img.youtube.com/vi/O7RCdS9KnRE/hqdefault.jpg 320w,
+                    https://img.youtube.com/vi/O7RCdS9KnRE/default.jpg 120w"
+             sizes="(min-width: 1280px) 1280px, (min-width: 640px) 640px, (min-width: 480px) 480px, (min-width: 320px) 320px, 120px"
+             alt="Introduction Video"
+             loading="lazy" class="video-list-img" />
+      </div>
+    </div>
+
+    <iframe class="shadow-2xl hidden w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/O7RCdS9KnRE?si=U8yL_qPI9pkrYQXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </main>
 
@@ -79,4 +94,62 @@ page: home
 			elementToRemoveAnimationFrom.classList.remove("selected")
 		}
   }
+</script>
+
+<script>
+	(function (window, undefined) {
+		function initialize() {
+			let n,
+				v = document.querySelectorAll(".youtube-player, .video-hero-container");
+			for (n = 0; n < v.length; n++) {
+				if (!v[n].dataset.clickHandler || v[n].dataset.clickHandler !== "true") {
+					v[n].dataset.clickHandler = "true";
+					v[n].addEventListener("click", triggerVideoPlayer);
+				}
+			}
+		}
+
+		function triggerVideoPlayer(e) {
+			e.preventDefault();
+			let videoId = e.currentTarget.dataset.id;
+			let tag = document.createElement('script');
+
+			tag.src = 'https://www.youtube.com/iframe_api';
+
+			let firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			let playerContainer = document.createElement('div');
+			playerContainer.className = 'player-container';
+			e.currentTarget.parentNode.replaceChild(playerContainer, e.currentTarget);
+
+			let containerWidth = playerContainer.offsetWidth;
+			let containerHeight = containerWidth * 0.5625; // 9/16
+
+			let player;
+
+			window.onYouTubeIframeAPIReady = function () {
+				player = new YT.Player(playerContainer, {
+					height: containerHeight,
+					width: containerWidth,
+					videoId: videoId,
+					events: {
+						'onReady': onPlayerReady
+					}
+				});
+			}
+
+			function onPlayerReady(event) {
+				event.target.playVideo();
+			}
+			return false;
+		}
+
+
+		initialize();
+
+		window.lazyYT = {
+			initialize: initialize
+		};
+	})(window);
 </script>

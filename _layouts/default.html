@@ -5,8 +5,11 @@
   <meta charset="utf-8">
   <meta name="description" content="Vernes: Experienced Software Engineer with over 7 years of expertise. Dive deep into a portfolio showcasing prowess in Rails, frontend delights, and robust backend solutions. Let's build something great together!">
   <meta name="author" content="Vernes Pendić">
-  <title>{{ page.title }} - {{ site.title }}</title>
-
+  {% if page.page == "home" %}
+    <title>{{ site.title }}</title>
+  {% else %}
+    <title>{{ page.title }} - {{ site.title }}</title>
+  {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <script src="https://kit.fontawesome.com/cd75f9f047.js" crossorigin="anonymous"></script>
 </head>
@@ -23,8 +26,11 @@
     html.dataset.mode = mode
   }
 
-  function showMenu() {
+  function showMenu({ children: [icon] }) {
 		const navigation = document.getElementById("navigation")
+
+    icon.classList.toggle("fa-bars")
+    icon.classList.toggle("fa-times")
 
 		navigation.classList.toggle("hidden")
 		navigation.classList.toggle("flex")
@@ -35,7 +41,7 @@
 		const entry = entries[0];
 
 		const navBar = document.querySelector('NAV');
-		navBar.children[1].classList.toggle('nav-scrolled', !entry.isIntersecting);
+		navBar.children[0].classList.toggle('nav-scrolled', !entry.isIntersecting);
 	}
 
 	const options = {

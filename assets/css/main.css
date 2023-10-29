@@ -605,10 +605,6 @@ video {
   left: 50%;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .top-1\/2 {
   top: 50%;
 }
@@ -645,19 +641,23 @@ video {
   order: 3;
 }
 
+.order-4 {
+  order: 4;
+}
+
 .-mx-2 {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
 }
 
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-}
-
-.mx-36 {
-  margin-left: 9rem;
-  margin-right: 9rem;
 }
 
 .mx-4 {
@@ -745,16 +745,8 @@ video {
   margin-top: 0.75rem;
 }
 
-.mt-36 {
-  margin-top: 9rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
 }
 
 .mt-5 {
@@ -769,12 +761,12 @@ video {
   margin-top: 2rem;
 }
 
-.block {
-  display: block;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
-.inline-block {
-  display: inline-block;
+.block {
+  display: block;
 }
 
 .flex {
@@ -853,24 +845,12 @@ video {
   width: 50%;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
 .w-12 {
   width: 3rem;
 }
 
 .w-16 {
   width: 4rem;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
 }
 
 .w-20 {
@@ -881,12 +861,12 @@ video {
   width: 0.75rem;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
 .w-32 {
   width: 8rem;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .w-\[210mm\] {
@@ -937,6 +917,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -978,10 +962,6 @@ video {
   gap: 2.5rem;
 }
 
-.gap-16 {
-  gap: 4rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -992,6 +972,10 @@ video {
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-36 {
+  gap: 9rem;
 }
 
 .gap-5 {
@@ -1018,6 +1002,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .rounded {
@@ -1118,10 +1106,6 @@ video {
   padding: 0.75rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .p-5 {
   padding: 1.25rem;
 }
@@ -1174,16 +1158,12 @@ video {
   padding-bottom: 5rem;
 }
 
-.pr-5 {
-  padding-right: 1.25rem;
-}
-
 .pt-24 {
   padding-top: 6rem;
 }
 
-.text-left {
-  text-align: left;
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
 .text-center {
@@ -1217,8 +1197,8 @@ video {
   font-size: 100px;
 }
 
-.text-\[40px\] {
-  font-size: 40px;
+.text-\[30px\] {
+  font-size: 30px;
 }
 
 .text-\[50px\] {
@@ -1279,21 +1259,6 @@ video {
 
 .tracking-wide {
   letter-spacing: 0.025em;
-}
-
-.text-\[\#0072b1\] {
-  --tw-text-opacity: 1;
-  color: rgb(0 114 177 / var(--tw-text-opacity));
-}
-
-.text-\[\#26a7de\] {
-  --tw-text-opacity: 1;
-  color: rgb(38 167 222 / var(--tw-text-opacity));
-}
-
-.text-\[\#4267B2\] {
-  --tw-text-opacity: 1;
-  color: rgb(66 103 178 / var(--tw-text-opacity));
 }
 
 .text-black {
@@ -1481,10 +1446,10 @@ main.background:has(.admire-me:hover) {
   line-height: 2rem;
   font-weight: 500;
   --tw-text-opacity: 1;
-  color: rgb(76 103 99 / var(--tw-text-opacity));
+  color: rgb(1 90 78 / var(--tw-text-opacity));
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .btn--primary {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -1497,6 +1462,33 @@ main.background:has(.admire-me:hover) {
 
 p {
   font-family: serat;
+  position: relative;
+  z-index: 10;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(76 103 99 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  p {
+    margin-top: 2.5rem;
+  }
 }
 
 .btn--primary--selected {
@@ -1531,7 +1523,7 @@ h2.header {
   line-height: 1.2;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   h2.header {
     font-size: 50px;
   }
@@ -1543,7 +1535,7 @@ h1.header {
   z-index: 10;
   margin-top: 4rem;
   text-align: center;
-  font-size: 75px;
+  font-size: 50px;
   font-weight: 900;
   line-height: 1;
 }
@@ -1557,6 +1549,7 @@ h1.header {
 @media (min-width: 768px) {
   h1.header {
     margin-top: 9rem;
+    font-size: 75px;
   }
 }
 
@@ -1642,12 +1635,11 @@ label > input[type="checkbox"] {
 label > input[type="checkbox"]:checked {
 }
 
-.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  -webkit-background-clip: text;
-  /* Also define standard property for compatibility */
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.html5-video-player, .player-container {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
 }
 
 .placeholder\:text-gray-400::-moz-placeholder {
@@ -1754,22 +1746,14 @@ label > input[type="checkbox"]:checked {
 }
 
 @media (min-width: 640px) {
-  .sm\:inset-x-0 {
-    left: 0px;
-    right: 0px;
-  }
-
-  .sm\:bottom-auto {
-    bottom: auto;
-  }
-
-  .sm\:top-3 {
-    top: 0.75rem;
-  }
-
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .sm\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
   }
 
   .sm\:mx-20 {
@@ -1787,10 +1771,6 @@ label > input[type="checkbox"]:checked {
     margin-right: auto;
   }
 
-  .sm\:mt-0 {
-    margin-top: 0px;
-  }
-
   .sm\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -1799,24 +1779,8 @@ label > input[type="checkbox"]:checked {
     margin-top: 5rem;
   }
 
-  .sm\:flex {
-    display: flex;
-  }
-
   .sm\:h-auto {
     height: auto;
-  }
-
-  .sm\:w-1\/2 {
-    width: 50%;
-  }
-
-  .sm\:w-1\/4 {
-    width: 25%;
-  }
-
-  .sm\:w-3\/4 {
-    width: 75%;
   }
 
   .sm\:w-auto {
@@ -1835,16 +1799,8 @@ label > input[type="checkbox"]:checked {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .sm\:flex-row {
-    flex-direction: row;
-  }
-
   .sm\:gap-16 {
     gap: 4rem;
-  }
-
-  .sm\:gap-3 {
-    gap: 0.75rem;
   }
 
   .sm\:gap-6 {
@@ -1859,6 +1815,10 @@ label > input[type="checkbox"]:checked {
     border-radius: 0.5rem;
   }
 
+  .sm\:p-10 {
+    padding: 2.5rem;
+  }
+
   .sm\:p-20 {
     padding: 5rem;
   }
@@ -1870,10 +1830,6 @@ label > input[type="checkbox"]:checked {
   .sm\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-
-  .sm\:pt-5 {
-    padding-top: 1.25rem;
   }
 
   .sm\:text-left {
@@ -1895,14 +1851,58 @@ label > input[type="checkbox"]:checked {
 }
 
 @media (min-width: 768px) {
+  .md\:invisible {
+    visibility: hidden;
+  }
+
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:inset-x-0 {
+    left: 0px;
+    right: 0px;
+  }
+
+  .md\:bottom-auto {
+    bottom: auto;
+  }
+
+  .md\:left-1\/2 {
+    left: 50%;
+  }
+
+  .md\:top-1\/2 {
+    top: 50%;
+  }
+
+  .md\:top-3 {
+    top: 0.75rem;
+  }
+
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
   }
 
+  .md\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .md\:mx-36 {
+    margin-left: 9rem;
+    margin-right: 9rem;
+  }
+
   .md\:mx-5 {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
+  }
+
+  .md\:my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 
   .md\:mb-5 {
@@ -1911,6 +1911,10 @@ label > input[type="checkbox"]:checked {
 
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:mt-20 {
+    margin-top: 5rem;
   }
 
   .md\:mt-24 {
@@ -1933,8 +1937,39 @@ label > input[type="checkbox"]:checked {
     display: none;
   }
 
+  .md\:h-\[297mm\] {
+    height: 297mm;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:w-1\/4 {
+    width: 25%;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
+  .md\:w-\[210mm\] {
+    width: 210mm;
+  }
+
+  .md\:-translate-x-1\/2 {
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:-translate-y-0 {
+    --tw-translate-y: -0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:translate-x-\[100\%\] {
+    --tw-translate-x: 100%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .md\:columns-2 {
@@ -1946,8 +1981,24 @@ label > input[type="checkbox"]:checked {
     flex-direction: row;
   }
 
-  .md\:gap-5 {
-    gap: 1.25rem;
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:gap-0 {
+    gap: 0px;
+  }
+
+  .md\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .md\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .md\:gap-20 {
+    gap: 5rem;
   }
 
   .md\:p-10 {
@@ -1962,6 +2013,33 @@ label > input[type="checkbox"]:checked {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:pr-5 {
+    padding-right: 1.25rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .md\:pt-5 {
+    padding-top: 1.25rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1969,16 +2047,50 @@ label > input[type="checkbox"]:checked {
     order: 0;
   }
 
-  .lg\:ml-1 {
-    margin-left: 0.25rem;
+  .lg\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .lg\:mx-36 {
+    margin-left: 9rem;
+    margin-right: 9rem;
   }
 
   .lg\:mt-0 {
     margin-top: 0px;
   }
 
+  .lg\:mt-36 {
+    margin-top: 9rem;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
+
+  .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
   }
 
   .lg\:columns-3 {
@@ -1988,6 +2100,18 @@ label > input[type="checkbox"]:checked {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:gap-0 {
+    gap: 0px;
+  }
+
+  .lg\:gap-16 {
+    gap: 4rem;
+  }
+
+  .lg\:self-start {
+    align-self: flex-start;
   }
 
   .lg\:px-8 {
@@ -2002,6 +2126,12 @@ label > input[type="checkbox"]:checked {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:mt-10 {
+    margin-top: 2.5rem;
   }
 }
 

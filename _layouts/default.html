@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}" data-mode="">
+<html lang="{{ site.lang | default: 'en-US' }}" >
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -20,10 +20,19 @@
 </body>
 
 <script>
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.querySelector('HTML').dataset.mode = 'dark'
+		document.querySelector('.darkmode-toggle').checked = true
+	} else {
+		document.querySelector('HTML').dataset.mode = 'light'
+		document.querySelector('.darkmode-toggle').checked = false
+	}
+
   function toggleDarkMode(checkbox) {
     const html = document.querySelector('HTML')
-    const mode = checkbox.checked ? 'dark' : ''
+    const mode = checkbox.checked ? 'dark' : 'light'
     html.dataset.mode = mode
+    localStorage.theme = mode
   }
 
   function showMenu({ children: [icon] }) {
@@ -33,7 +42,7 @@
     icon.classList.toggle("fa-times")
 
 		navigation.classList.toggle("hidden")
-		navigation.classList.toggle("flex")
+		navigation.classList.toggle("block")
     navigation.classList.toggle("nav-scrolled")
   }
 

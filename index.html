@@ -12,13 +12,13 @@ page: home
       </div>
     </h1>
 
-    <p class="text-secondary-text text-center 2xl:w-2/3 order-3 lg:order-none lg:text-start relative z-10 text-base lg:text-xl">
+    <p class="text-secondary-text text-center 2xl:w-2/3 order-3 mt-5 lg:order-none lg:text-start relative z-10 text-base lg:text-xl">
       Passionate about making things. Full-stacked with Rails, Hotwired, Stimulus, Tailwind, and ideas.
       Explore my latest digital adventures here.
     </p>
 
     <a href="/hire-me"
-       class="w-64 lg:order-none order-4 self-center mt-10 md:mt-0 lg:self-start cat bg-white bg-opacity-50 tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 md:py-4 md:px-8 inline-flex items-center">
+       class="w-64 lg:order-none order-4 self-center mt-10 md:mt-0 dark:text-main-green lg:self-start cat dark:hover:bg-fresh-green dark:bg-white-green bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 md:py-4 md:px-8 inline-flex items-center">
       <span class="mx-auto">Hire Now</span>
     </a>
   </div>
@@ -62,10 +62,6 @@ page: home
   document.querySelector(".hire-me").addEventListener("mouseover", () => {
     showRandomElement("hire-tag")
   })
-
-	// document.querySelector(".cat").addEventListener("mouseover", () => {
-	// 	showRandomElement("hire-tag")
-	// })
 
 	document.querySelector(".admire-me").addEventListener("mouseover", () => {
     showRandomElement("admire-tag")

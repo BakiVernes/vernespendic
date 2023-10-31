@@ -14,6 +14,7 @@ module.exports = {
         "link-hover": "#017261",
         "background": "#ede7de",
         "fresh-green": "#8fdcc2",
+        "white-green": "#d4ede4",
         "secondary-text": "#4c6763"
       }
     },

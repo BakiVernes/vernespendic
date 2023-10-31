@@ -1,13 +1,13 @@
 <div class="fixed bottom-0 inset-x-0 z-[51] md:hidden block p-5">
-  <button class="rounded-full w-12 h-12 justify-center text-main-green flex items-center bg-[rgba(237,231,222,0.5)] shadow-md backdrop-blur ml-auto block shadow-lg" onclick="showMenu(this)">
+  <button class="rounded-full w-12 h-12 justify-center text-main-green dark:text-fresh-green flex items-center bg-[rgba(237,231,222,0.5)] dark:bg-green-950 dark:bg-opacity-30 shadow-md backdrop-blur ml-auto block shadow-lg" onclick="showMenu(this)">
     <i class="fa-solid fa-bars block text-2xl"></i>
   </button>
 </div>
 
 {% if page.page == "home" %}
-<nav id="navigation" class="touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full flex-col md:flex-row sm:w-auto md:flex hidden gap-36 md:gap-0 md:justify-between z-50">
+<nav id="navigation" class="max-w-[1500px] mx-auto touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full flex-col md:flex-row sm:w-auto md:flex hidden gap-36 md:gap-0 md:justify-between z-50">
 {% else %}
-<nav id="navigation" class="touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full sm:w-auto justify-center md:flex hidden z-50">
+<nav id="navigation" class="max-w-[1500px] md:items-center mx-auto touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full sm:w-auto justify-center md:flex hidden z-50">
 {% endif %}
   <ul class="flex w-full sm:w-auto md:flex-row flex-col items-center gap-10 pt-24 md:pt-5 sm:px-5 md:gap-3 sm:rounded-full p-5 transition-all">
     <li>
@@ -65,29 +65,24 @@
   </ul>
 
   {% if page.page == "home" %}
-    <ul class="text-4xl mx-auto md:mx-0 text-main-green flex items-center gap-5 md:pr-5">
-      <li><a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146"
-                          class="hover:cursor-pointer"><i class="fa-brands fa-linkedin"></i></a>
+    <ul class="text-4xl mx-auto md:mx-0 text-main-green flex items-center gap-5 md:pr-4">
+      <li><a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146">
+        <i class="fa-brands fa-linkedin"></i></a>
       </li>
-      <li><a target="_blank" href="https://github.com/BakiVernes"
-                          class="hover:cursor-pointer"><i
-          class="fa-brands fa-github"></i></a></li>
-      <li><a target="_blank" href="https://twitter.com/gembo_z"
-                          class="hover:cursor-pointer"><i class="fa-brands fa-twitter"></i></a>
+      <li><a target="_blank" href="https://github.com/BakiVernes"><i class="fa-brands fa-github"></i></a></li>
+      <li><a target="_blank" href="https://twitter.com/gembo_z"><i class="fa-brands fa-twitter"></i></a>
       </li>
-      <li><a target="_blank" href="https://www.instagram.com/zgembac/"
-                          class="instagram hover:cursor-pointer"><i
+      <li><a target="_blank" href="https://www.instagram.com/zgembac/"><i
           class="fa-brands fa-instagram"></i></a></li>
-      <li><a target="_blank" href="https://www.facebook.com/vernes.pendic/"
-                          class="hover:cursor-pointer"><i class="fa-brands fa-facebook"></i></a>
+      <li><a target="_blank" href="https://www.facebook.com/vernes.pendic/"><i class="fa-brands fa-facebook"></i></a>
       </li>
-
       <li>
-        <label class="toggle cursor-pointer">
-          <i class="fa-solid fa-moon"></i>
-          <input type="checkbox" onchange="toggleDarkMode(this)" id="darkmode-toggle">
-        </label>
+        {% include dark.html %}
       </li>
     </ul>
+  {% else %}
+    <div class="flex items-center justify-center md:absolute md:right-4 text-4xl">
+      {% include dark.html %}
+    </div>
   {% endif %}
 </nav>

@@ -5,10 +5,10 @@ permalink: /hire-me/cv/
 page: cv
 ---
 
-<div class="relative text-black md:mt-20">
-  <div class="top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-0 bg-white -rotate-2 md:flex z-10 my-5 h-[297mm] w-[210mm] mx-auto p-10 shadow-2xl absolute"></div>
+<div class="relative text-black md:mt-20 dark:text-white-green h-[320mm] md:overflow-hidden">
+  <div class="left-1/2 hidden -translate-x-1/2 -translate-y-0 dark:bg-[#323232] dark:bg-opacity-80 bg-gray-100 -rotate-2 md:flex z-10 my-5 h-[297mm] w-[210mm] mx-auto p-10 shadow-2xl absolute"></div>
 
-  <main data-current class="ease-in-out duration-500 cv-page md:my-5 md:h-[297mm] md:w-[210mm] md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-0 md:absolute p-3 sm:p-10 shadow-2xl bg-white z-40">
+  <main data-current class="ease-in-out duration-500 cv-page md:my-5 md:h-[297mm] md:w-[210mm] md:left-1/2 md:-translate-x-1/2 md:-translate-y-0 md:absolute p-3 sm:p-10 shadow-2xl dark:bg-[#323232] bg-white z-40">
     <header class="pt-3 md:pt-0">
       <h1 class="text-3xl font-bold">Vernes Pendić</h1>
       <h2>Software Engineer</h2>
@@ -93,7 +93,7 @@ page: cv
     </div>
   </main>
 
-  <main class="ease-in-out md:invisible duration-500 md:my-5 md:h-[297mm] md:w-[210mm] md:top-1/2 md:left-1/2 md:translate-x-[100%] md:-translate-y-0 md:absolute p-3 sm:p-10 shadow-2xl bg-white z-40">
+  <main class="ease-in-out md:invisible duration-500 md:my-5 md:h-[297mm] md:w-[210mm] md:left-1/2 md:translate-x-[100%] md:-translate-y-0 md:absolute p-3 sm:p-10 shadow-2xl dark:bg-[#323232] bg-white z-40">
     <header class="hidden md:block">
       <h1 class="text-3xl font-bold">Vernes Pendić</h1>
       <h2>Software Engineer</h2>
@@ -154,13 +154,13 @@ page: cv
 		let currentPage = document.querySelector("main[data-current]")
 		let nextPage = document.querySelector("main:not([data-current])")
 
-		currentPage.classList.toggle("-translate-x-1/2")
-		currentPage.classList.toggle("translate-x-[100%]")
-		currentPage.classList.toggle("invisible")
+		currentPage.classList.toggle("md:-translate-x-1/2")
+		currentPage.classList.toggle("md:translate-x-[100%]")
+		currentPage.classList.toggle("md:invisible")
 
-		nextPage.classList.toggle("translate-x-[100%]")
-		nextPage.classList.toggle("-translate-x-1/2")
-		nextPage.classList.toggle("invisible")
+		nextPage.classList.toggle("md:translate-x-[100%]")
+		nextPage.classList.toggle("md:-translate-x-1/2")
+		nextPage.classList.toggle("md:invisible")
 
 		nextPage.setAttribute("data-current", null)
 		currentPage.removeAttribute("data-current")

@@ -29,20 +29,20 @@ main.background:has(.admire-me:hover) {
 }
 
 .btn--primary {
-  @apply rounded-full text-main-green text-2xl md:text-base px-8 py-3 md:px-5 md:py-2 font-medium text-center cursor-pointer;
+  @apply rounded-full dark:text-white-green text-main-green text-2xl md:text-base px-8 py-3 md:px-5 md:py-2 font-medium text-center cursor-pointer;
 }
 
 p {
   font-family: serat;
-  @apply sm:text-lg lg:text-xl z-10 relative text-secondary-text mt-5 xl:mt-10 text-sm;
+  @apply sm:text-lg lg:text-xl z-10 relative dark:text-white-green text-secondary-text mt-5 xl:mt-10 text-sm;
 }
 
 .btn--primary--selected {
-  background-color: rgba(255, 255, 255, 0.5);
+  @apply bg-[rgba(255,255,255,0.5)] dark:bg-green-950 dark:bg-opacity-30;
 }
 
 .nav-scrolled {
-  @apply bg-[rgba(237,231,222,0.5)] shadow-md backdrop-blur;
+  @apply bg-[rgba(237,231,222,0.5)] dark:bg-[rgba(1,90,78,0.5)] shadow-md backdrop-blur;
 }
 
 h3.header {
@@ -102,6 +102,10 @@ h1.header {
   background-image: linear-gradient(to top, #ede7de, transparent);
 }
 
+[data-mode='dark'] .animation-canvas::after {
+  background-image: linear-gradient(to top, #015a4e, transparent);
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -111,12 +115,12 @@ h1.header {
   }
 }
 
-
-label > input[type="checkbox"] {
-  @apply appearance-none outline-none;
+.fa-brands {
+  @apply hover:text-link-hover dark:text-fresh-green hover:cursor-pointer hover:-translate-y-1 transition-transform ease-in-out;
 }
 
-label > input[type="checkbox"]:checked {
+.toggle > input {
+  @apply appearance-none outline-none;
 }
 
 .html5-video-player, .player-container {

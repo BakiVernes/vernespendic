@@ -29,23 +29,23 @@ page: hire
   </div>
 
   <div class="mt-10 sm:mt-20 mx-4 sm:mx-10">
-    <div class="text-white px-6 py-4 sm:p-6 ml-auto bg-main-green rounded-full md:w-3/4">
+    <div class="dark:text-main-green text-white px-6 py-4 sm:p-6 ml-auto dark:bg-fresh-green bg-main-green rounded-full md:w-3/4">
       <div class="flex items-center justify-between">
         <div>
-          <strong>WizardHealth</strong>
+          <strong class="font-[serat]">WizardHealth</strong>
           <div>Fullstack Software Engineer</div>
         </div>
-        <div>17~</div>
+        <div class="font-[serat] text-xl">17~</div>
       </div>
     </div>
 
-    <div class="text-white px-6 py-4 sm:p-6 bg-main-green rounded-full md:w-1/4 mt-5">
+    <div class="dark:text-main-green text-white px-6 py-4 sm:p-6 dark:bg-fresh-green bg-main-green rounded-full md:w-1/4 mt-5">
       <div class="flex items-center justify-between">
         <div>
-          <strong>Four Game Studio</strong>
+          <strong class="font-[serat]">Four Game Studio</strong>
           <div>Game Programmer</div>
         </div>
-        <div>15-17</div>
+        <div class="font-[serat] text-xl">15-17</div>
       </div>
     </div>
   </div>
@@ -54,8 +54,8 @@ page: hire
     <h2 class="mx-5 sm:mx-20 header">
       Let's work together if you
     </h2>
-    <div class="mt-5 mx-4 sm:mx-10 sm:mt-10 m rounded-xl flex overflow-hidden p-8 sm:p-20 relative">
-      <div class="absolute inset-0 bg-white opacity-30"></div>
+    <div class="mt-5 mx-4 sm:mx-10 sm:mt-10 m rounded-xl flex overflow-hidden p-8 md:p-20 relative">
+      <div class="absolute inset-0 dark:bg-green-950 bg-white opacity-30"></div>
 
       <div class="grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16 grid relative">
         {% for requirement in site.data.requirements.requirements %}
@@ -78,9 +78,9 @@ page: hire
       My public work
     </h2>
 
-    <ul class="grid sm:grid-cols-2 gap-3 sm:gap-6 mt-8 sm:mt-10 mx-5">
+    <ul class="grid sm:grid-cols-2 gap-3 sm:gap-6 mt-8 sm:mt-10">
       <li class="transform transition-transform hover:translate-y-[-10px] rounded-xl overflow-hidden relative">
-        <div class="absolute inset-0 bg-white opacity-30"></div>
+        <div class="absolute inset-0 dark:bg-green-950 bg-white opacity-30"></div>
 
         <a href="https://github.com/BakiVernes" target="_target" class="md:p-10 p-5 block relative z-10">
           <h3 class="header">
@@ -95,7 +95,7 @@ page: hire
       </li>
 
       <li class="transform transition-transform hover:translate-y-[-10px] rounded-xl h-48 sm:h-auto overflow-hidden relative">
-        <div class="absolute inset-0 bg-white opacity-30"></div>
+        <div class="absolute inset-0 dark:bg-green-950 bg-white opacity-30"></div>
 
         <a href="https://dev.to/bakivernes" target="_target" class="md:p-10 p-5 block relative z-10">
           <h3 class="header">
@@ -120,20 +120,20 @@ page: hire
       <div>
         <div>
           <ul class="text-4xl flex gap-5">
-            <li class="mt-5"><a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146"
-                                class="hover:cursor-pointer hover:text-link-hover"><i class="fa-brands fa-linkedin"></i></a>
+            <li class="mt-5">
+              <a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146"><i class="fa-brands fa-linkedin"></i></a>
             </li>
-            <li class="mt-5"><a target="_blank" href="https://github.com/BakiVernes"
-                                class="hover:cursor-pointer hover:text-link-hover"><i
-                class="fa-brands fa-github"></i></a></li>
-            <li class="mt-5"><a target="_blank" href="https://twitter.com/gembo_z"
-                                class="hover:cursor-pointer hover:text-link-hover"><i class="fa-brands fa-twitter"></i></a>
+            <li class="mt-5">
+              <a target="_blank" href="https://github.com/BakiVernes"><i class="fa-brands fa-github"></i></a>
             </li>
-            <li class="mt-5"><a target="_blank" href="https://www.instagram.com/zgembac/"
-                                class="hover:cursor-pointer hover:text-link-hover"><i
-                class="fa-brands fa-instagram"></i></a></li>
-            <li class="mt-5"><a target="_blank" href="https://www.facebook.com/vernes.pendic/"
-                                class="hover:cursor-pointer hover:text-link-hover"><i class="fa-brands fa-facebook"></i></a>
+            <li class="mt-5">
+              <a target="_blank" href="https://twitter.com/gembo_z"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li class="mt-5">
+              <a target="_blank" href="https://www.instagram.com/zgembac/"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li class="mt-5">
+              <a target="_blank" href="https://www.facebook.com/vernes.pendic/"><i class="fa-brands fa-facebook"></i></a>
             </li>
           </ul>
         </div>
@@ -158,14 +158,14 @@ page: hire
         {% for song in site.data.songs.songs %}
           <template id="item-{{ forloop.index }}">
             <a id="secondLink" target="_blank" href="{{ song.link }}" class="relative p-3 -mx-2 md:mx-0 md:p-5 rounded-full block overflow-hidden">
-              <div class="absolute inset-0 bg-white opacity-30"></div>
+              <div class="absolute inset-0 dark:bg-green-950 bg-white opacity-30"></div>
 
               <div class="flex items-center gap-6">
                 <i class="fa-brands fa-spotify text-[50px]"></i>
 
                 <div>
                   <div>On repeat</div>
-                  <div id="secondName" class="text-secondary-text relative">{{ song.name }}</div>
+                  <div id="secondName" class="dark:text-fresh-green text-secondary-text relative">{{ song.name }}</div>
                 </div>
               </div>
             </a>

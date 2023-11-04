@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="description" content="Vernes: Experienced Software Engineer with over 7 years of expertise. Dive deep into a portfolio showcasing prowess in Rails, frontend delights, and robust backend solutions. Let's build something great together!">
+  <meta name="author" content="Vernes Pendić">
+  
+    <title>Vernes Pendić</title>
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="https://kit.fontawesome.com/cd75f9f047.js" crossorigin="anonymous"></script>
+</head>
+<body class="transition-all bg-background dark:bg-main-green h-[100px] text-main-green max-w-[1500px] dark:text-fresh-green mx-auto">
+  <div class="fixed bottom-0 inset-x-0 z-[101] md:hidden block p-5">
+  <button class="rounded-full w-12 h-12 justify-center text-main-green dark:text-fresh-green flex items-center bg-[rgba(237,231,222,0.5)] dark:bg-green-950 dark:bg-opacity-30 shadow-md backdrop-blur ml-auto block" onclick="showMenu(this)">
+    <i class="fa-solid fa-bars block text-2xl"></i>
+  </button>
+</div>
+
+
+<nav id="navigation" class="max-w-[1500px] items-center mx-auto touch-none inset-0 md:inset-x-0 md:bottom-auto md:top-3 fixed sm:rounded-lg w-full flex-col md:flex-row sm:w-auto md:flex hidden gap-36 md:gap-0 md:justify-between z-[100]">
+
+  <ul class="flex w-full sm:w-auto md:flex-row flex-col items-center gap-10 pt-24 md:pt-5 sm:px-5 md:gap-3 sm:rounded-full p-5 transition-all">
+    <li>
+      
+        <a href="/" class="btn--primary btn--primary--selected">
+      
+          Home
+        </a>
+    </li>
+    
+      <li><a href="/hire-me" class="hire-me btn--primary">Hire Me</a></li>
+
+      <li>
+        
+          <a href="/admire-me" class="admire-me btn--primary">
+        
+          Admire Me</a></li>
+    
+
+    
+  </ul>
+
+  
+    <ul class="text-4xl mx-auto md:mx-0 text-main-green mt-20 md:mt-0 flex items-center gap-5 justify-center md:justify-start md:pr-4 flex-wrap">
+      <li class="order-2 md:order-none mt-10 md:mt-0"><a target="_blank" href="https://linkedin.com/in/vernes-pendi%C4%87-830625146">
+        <i class="fa-brands fa-linkedin"></i></a>
+      </li>
+      <li class="order-3 md:order-none mt-10 md:mt-0"><a target="_blank" href="https://github.com/BakiVernes"><i class="fa-brands fa-github"></i></a></li>
+      <li class="order-4 md:order-none mt-10 md:mt-0"><a target="_blank" href="https://twitter.com/gembo_z"><i class="fa-brands fa-twitter"></i></a>
+      </li>
+      <li class="order-5 md:order-none mt-10 md:mt-0"><a target="_blank" href="https://www.instagram.com/zgembac/"><i
+          class="fa-brands fa-instagram"></i></a></li>
+      <li class="order-6 md:order-none mt-10 md:mt-0"><a target="_blank" href="https://www.facebook.com/vernes.pendic/"><i class="fa-brands fa-facebook"></i></a>
+      </li>
+      <li class="w-full md:w-auto order-1 md:order-none flex justify-center">
+        <label class="toggle cursor-pointer rounded-full w-12 h-12 justify-center text-main-green dark:text-fresh-green flex items-center bg-[rgba(237,231,222,0.5)] dark:bg-green-950 dark:bg-opacity-30 shadow-md backdrop-blur ml-0 md:ml-auto block">
+  <input type="checkbox" onchange="toggleDarkMode(this)" class="darkmode-toggle">
+  <svg class="sun dark:stroke-fresh-green p-2 stroke-main-green" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+  <i class="fa-solid fa-moon" id="moon"></i>
+</label>
+
+      </li>
+    </ul>
+  
+</nav>
+  <div class="absolute inset-0 z-0 animation-canvas pointer-events-none"></div>
+  <main class="index h-screen flex flex-col lg:flex-row gap-10 items-center mx-2 md:mx-5">
+  <div class="flex flex-col relative justify-center w-full gap-5 lg:w-1/2 order-2 lg:order-none">
+    <h1 class="lg:text-start text-center">
+      <div>Hi. I'm Vernes.</div>
+      <div id="container" class="hire-animation">
+        Human
+      </div>
+    </h1>
+
+    <p class="text-secondary-text text-center 2xl:w-2/3 order-3 mt-5 lg:order-none lg:text-start relative z-10 text-base lg:text-xl">
+      Passionate about making things. Full-stacked with Rails, Hotwired, Stimulus, Tailwind, and ideas.
+      Explore my latest digital adventures here.
+    </p>
+
+    <a href="/hire-me"
+       class="w-64 lg:order-none order-4 self-center mt-10 md:mt-0 dark:text-main-green lg:self-start cat dark:hover:bg-fresh-green dark:bg-white-green bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-main-green hover:bg-link-hover hover:text-white shadow-md py-2 px-6 md:py-4 md:px-8 inline-flex items-center">
+      <span class="mx-auto">Hire Now</span>
+    </a>
+  </div>
+  <div class="relative w-full md:w-1/2 order-1 lg:order-none mt-2 md:mt-24 lg:mt-0">
+    <div class="video-card transition-all ease-in-out hover:shadow-2xl w-full aspect-video rounded-xl cursor-pointer">
+      <div class="relative h-full video-list-item youtube-player rounded-xl group" data-id="O7RCdS9KnRE">
+        <div class="absolute h-full flex items-center justify-center inset-0">
+          <span class="z-[60]">
+            <button
+                class="rounded-full h-20 w-20 group-hover:h-32 transition-all ease-in-out group-hover:w-32 justify-center text-main-green dark:text-fresh-green flex items-center bg-[rgba(237,231,222,0.5)] dark:bg-green-950 dark:bg-opacity-30 shadow-md backdrop-blur">
+              <i class="group-hover:text-6xl transition-all ease-in-out text-4xl fa-solid fa-play"></i>
+            </button>
+          </span>
+        </div>
+        <img loading="lazy"  src="/assets/img/cover.png" class="z-[59] absolute inset-0 rounded-xl">
+        <img loading="lazy"  src="/assets/img/ruka.png" class="z-[61] absolute inset-0 rounded-xl">
+      </div>
+    </div>
+  </div>
+</main>
+
+<template class="admire-tag"><span>Friend</span></template>
+<template class="admire-tag">
+  <span>
+    <a href="https://www.youtube.com/@zGembo" target="_blank" class="cursor-pointer hover:text-link-hover inline-flex"><i class="fa-brands mr-4 mt-1 fa-youtube"></i>YouTuber</a>
+  </span>
+</template>
+<template class="admire-tag"><span>Weightlifter</span></template>
+
+<template class="hire-tag"><span>Software Engineer</span></template>
+<template class="hire-tag">
+  <span>
+    <a href="https://youtu.be/iqXjGiQ_D-A?si=aqsctEPXDfNt8MaH&t=1200" target="_blank" class="cursor-pointer hover:text-link-hover">Renaissance Developer</a>
+  </span>
+</template>
+
+
+<script>
+	(function(){
+		const is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent)
+		const is_safari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)
+		if (!is_ios && !is_safari) {
+			document.querySelector(".hire-me").addEventListener("mouseover", () => {
+				showRandomElement("hire-tag")
+			})
+
+			document.querySelector(".admire-me").addEventListener("mouseover", () => {
+				showRandomElement("admire-tag")
+			})
+		}
+	})()
+
+  function showRandomElement(classToShow) {
+		const itemsToShow = document.querySelectorAll(`.${classToShow}:not(.selected)`)
+		toggleSelected()
+
+		const template = itemsToShow[Math.floor(Math.random()*itemsToShow.length)]
+    template.classList.add("selected")
+    const extractedContent = document.importNode(template.content, true).querySelector("SPAN")
+
+    const container = document.getElementById("container")
+    container.classList.remove("hire-animation")
+		container.innerHTML = ""
+
+		container.appendChild(extractedContent)
+		container.offsetWidth // Trigger reflow
+    container.classList.add("hire-animation")
+  }
+
+  function toggleSelected() {
+		const elementToRemoveAnimationFrom = document.querySelector(".selected")
+		if (elementToRemoveAnimationFrom) {
+			elementToRemoveAnimationFrom.classList.remove("selected")
+		}
+  }
+</script>
+
+<script>
+	(function (window, undefined) {
+		window.onYouTubeIframeAPIReady = function () {
+		};
+
+		function initialize() {
+			let n,
+				v = document.querySelectorAll(".youtube-player, .video-hero-container");
+			for (n = 0; n < v.length; n++) {
+				if (!v[n].dataset.clickHandler || v[n].dataset.clickHandler !== "true") {
+					v[n].dataset.clickHandler = "true";
+					v[n].addEventListener("click", e => triggerVideoPlayer(e).then((data) => {
+						createYouTubePlayer(data.playerContainer, data.videoId);
+          } ));
+				}
+			}
+		}
+
+		function triggerVideoPlayer(e) {
+			return new Promise((resolve, reject) => {
+				e.preventDefault();
+				const videoId = e.currentTarget.dataset.id;
+				const tag = document.createElement('script');
+				const videoPlaceholder = e.currentTarget
+
+				tag.src = 'https://www.youtube.com/iframe_api';
+
+				const firstScriptTag = document.getElementsByTagName('script')[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+				const playerContainer = document.createElement('div');
+				playerContainer.className = 'player-container fade-in';
+
+				videoPlaceholder.classList.add("fade-out")
+
+				setTimeout(function () {
+					videoPlaceholder.parentNode.replaceChild(playerContainer, videoPlaceholder);
+					resolve({ playerContainer: playerContainer, videoId: videoId });
+				}, 500);
+			  });
+      }
+
+			function createYouTubePlayer(playerContainer, videoId) {
+        let containerWidth = playerContainer.offsetWidth;
+        let containerHeight = containerWidth * 0.5625; // 9/16
+
+        new YT.Player(playerContainer, {
+          height: containerHeight,
+          width: containerWidth,
+          videoId: videoId,
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+
+        function onPlayerReady(event) {
+          event.target.playVideo();
+        }
+      }
+
+
+		initialize();
+
+		window.lazyYT = {
+			initialize: initialize
+		};
+	})(window);
+</script>
+
+
+  
+</body>
+
+<script>
+	if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.querySelector('HTML').dataset.mode = 'dark'
+		document.querySelector('.darkmode-toggle').checked = true
+	} else {
+		document.querySelector('HTML').dataset.mode = 'light'
+		document.querySelector('.darkmode-toggle').checked = false
+	}
+
+  function toggleDarkMode(checkbox) {
+    const html = document.querySelector('HTML')
+    const mode = checkbox.checked ? 'dark' : 'light'
+    html.dataset.mode = mode
+    localStorage.theme = mode
+  }
+
+  function showMenu({ children: [icon] }) {
+		const navigation = document.getElementById("navigation")
+
+    icon.classList.toggle("fa-bars")
+    icon.classList.toggle("fa-times")
+
+		navigation.classList.toggle("hidden")
+		navigation.classList.toggle("block")
+    navigation.classList.toggle("nav-scrolled")
+  }
+
+	const callback = (entries, observer) => {
+		const entry = entries[0];
+
+		const navBar = document.querySelector('NAV');
+		navBar.children[0].classList.toggle('nav-scrolled', !entry.isIntersecting);
+	}
+
+	const options = {
+		rootMargin: "-60px 0px 0px 0px",
+		threshold: [1]
+	};
+
+
+	const io = new IntersectionObserver(callback, options);
+
+	const target = document.querySelector('H1');
+
+	if (window.innerWidth > 768) {
+		io.observe(target);
+	}
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth <= 768) {
+			io.disconnect();
+		} else {
+			io.observe(target);
+		}
+	});
+</script>
+</html>

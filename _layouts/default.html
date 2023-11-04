@@ -17,6 +17,10 @@
   {% include navigation.html %}
   <div class="absolute inset-0 z-0 animation-canvas pointer-events-none"></div>
   {{ content }}
+
+  {% if page.page != "home" %}
+    {% include footer.html %}
+  {% endif %}
 </body>
 
 <script>
@@ -58,9 +62,21 @@
 		threshold: [1]
 	};
 
+
 	const io = new IntersectionObserver(callback, options);
 
 	const target = document.querySelector('H1');
-	io.observe(target);
+
+	if (window.innerWidth > 768) {
+		io.observe(target);
+	}
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth <= 768) {
+			io.disconnect();
+		} else {
+			io.observe(target);
+		}
+	});
 </script>
 </html>

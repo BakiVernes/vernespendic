@@ -115,12 +115,60 @@ h1.header {
   }
 }
 
+@keyframes swirl {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+.toggle > input:checked {
+  animation: swirl 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeIn 0.5s ease-in-out reverse;
+}
+
 .fa-brands {
   @apply hover:text-link-hover dark:text-fresh-green hover:cursor-pointer hover:-translate-y-1 transition-transform ease-in-out;
 }
 
 .toggle > input {
   @apply appearance-none outline-none;
+}
+
+.toggle > input ~ .fa-moon {
+  @apply hidden;
+}
+
+.toggle > input + .sun {
+  @apply block;
+}
+
+.toggle > input:checked ~ .fa-moon {
+  @apply block;
+}
+
+.toggle > input:checked + .sun {
+  @apply hidden;
 }
 
 .html5-video-player, .player-container {

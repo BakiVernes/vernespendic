@@ -23,22 +23,20 @@ page: home
     </a>
   </div>
   <div class="relative w-full md:w-1/2 order-1 lg:order-none mt-2 md:mt-24 lg:mt-0">
-
-    <div class="video-card shadow-2xl w-full aspect-video rounded-xl cursor-pointer">
-      <div class="video-list-item youtube-player rounded-xl" data-id="O7RCdS9KnRE">
-        <img src="https://img.youtube.com/vi/O7RCdS9KnRE/sddefault.jpg" class="rounded-xl w-full"
-             srcset="https://img.youtube.com/vi/O7RCdS9KnRE/maxresdefault.jpg 1280w,
-                    https://img.youtube.com/vi/O7RCdS9KnRE/sddefault.jpg 640w,
-                    https://img.youtube.com/vi/O7RCdS9KnRE/mqdefault.jpg 480w,
-                    https://img.youtube.com/vi/O7RCdS9KnRE/hqdefault.jpg 320w,
-                    https://img.youtube.com/vi/O7RCdS9KnRE/default.jpg 120w"
-             sizes="(min-width: 1280px) 1280px, (min-width: 640px) 640px, (min-width: 480px) 480px, (min-width: 320px) 320px, 120px"
-             alt="Introduction Video"
-             loading="lazy" class="video-list-img" />
+    <div class="video-card transition-all ease-in-out hover:shadow-2xl w-full aspect-video rounded-xl cursor-pointer">
+      <div class="relative h-full video-list-item youtube-player rounded-xl group" data-id="O7RCdS9KnRE">
+        <div class="absolute h-full flex items-center justify-center inset-0">
+          <span class="z-[60]">
+            <button
+                class="rounded-full h-20 w-20 group-hover:h-32 transition-all ease-in-out group-hover:w-32 justify-center text-main-green dark:text-fresh-green flex items-center bg-[rgba(237,231,222,0.5)] dark:bg-green-950 dark:bg-opacity-30 shadow-md backdrop-blur">
+              <i class="group-hover:text-6xl transition-all ease-in-out text-4xl fa-solid fa-play"></i>
+            </button>
+          </span>
+        </div>
+        <img loading="lazy"  src="/assets/img/cover.png" class="z-[59] absolute inset-0 rounded-xl">
+        <img loading="lazy"  src="/assets/img/ruka.png" class="z-[61] absolute inset-0 rounded-xl">
       </div>
     </div>
-
-    <iframe class="shadow-2xl hidden w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/O7RCdS9KnRE?si=U8yL_qPI9pkrYQXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </main>
 
@@ -59,13 +57,19 @@ page: home
 
 
 <script>
-  document.querySelector(".hire-me").addEventListener("mouseover", () => {
-    showRandomElement("hire-tag")
-  })
+	(function(){
+		const is_ios = /iP(ad|od|hone)/i.test(window.navigator.userAgent)
+		const is_safari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)
+		if (!is_ios && !is_safari) {
+			document.querySelector(".hire-me").addEventListener("mouseover", () => {
+				showRandomElement("hire-tag")
+			})
 
-	document.querySelector(".admire-me").addEventListener("mouseover", () => {
-    showRandomElement("admire-tag")
-	})
+			document.querySelector(".admire-me").addEventListener("mouseover", () => {
+				showRandomElement("admire-tag")
+			})
+		}
+	})()
 
   function showRandomElement(classToShow) {
 		const itemsToShow = document.querySelectorAll(`.${classToShow}:not(.selected)`)
@@ -94,52 +98,63 @@ page: home
 
 <script>
 	(function (window, undefined) {
+		window.onYouTubeIframeAPIReady = function () {
+		};
+
 		function initialize() {
 			let n,
 				v = document.querySelectorAll(".youtube-player, .video-hero-container");
 			for (n = 0; n < v.length; n++) {
 				if (!v[n].dataset.clickHandler || v[n].dataset.clickHandler !== "true") {
 					v[n].dataset.clickHandler = "true";
-					v[n].addEventListener("click", triggerVideoPlayer);
+					v[n].addEventListener("click", e => triggerVideoPlayer(e).then((data) => {
+						createYouTubePlayer(data.playerContainer, data.videoId);
+          } ));
 				}
 			}
 		}
 
 		function triggerVideoPlayer(e) {
-			e.preventDefault();
-			let videoId = e.currentTarget.dataset.id;
-			let tag = document.createElement('script');
+			return new Promise((resolve, reject) => {
+				e.preventDefault();
+				const videoId = e.currentTarget.dataset.id;
+				const tag = document.createElement('script');
+				const videoPlaceholder = e.currentTarget
 
-			tag.src = 'https://www.youtube.com/iframe_api';
+				tag.src = 'https://www.youtube.com/iframe_api';
 
-			let firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				const firstScriptTag = document.getElementsByTagName('script')[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-			let playerContainer = document.createElement('div');
-			playerContainer.className = 'player-container';
-			e.currentTarget.parentNode.replaceChild(playerContainer, e.currentTarget);
+				const playerContainer = document.createElement('div');
+				playerContainer.className = 'player-container fade-in';
 
-			let containerWidth = playerContainer.offsetWidth;
-			let containerHeight = containerWidth * 0.5625; // 9/16
+				videoPlaceholder.classList.add("fade-out")
 
-			let player;
+				setTimeout(function () {
+					videoPlaceholder.parentNode.replaceChild(playerContainer, videoPlaceholder);
+					resolve({ playerContainer: playerContainer, videoId: videoId });
+				}, 500);
+			  });
+      }
 
-			window.onYouTubeIframeAPIReady = function () {
-				player = new YT.Player(playerContainer, {
-					height: containerHeight,
-					width: containerWidth,
-					videoId: videoId,
-					events: {
-						'onReady': onPlayerReady
-					}
-				});
-			}
+			function createYouTubePlayer(playerContainer, videoId) {
+        let containerWidth = playerContainer.offsetWidth;
+        let containerHeight = containerWidth * 0.5625; // 9/16
 
-			function onPlayerReady(event) {
-				event.target.playVideo();
-			}
-			return false;
-		}
+        new YT.Player(playerContainer, {
+          height: containerHeight,
+          width: containerWidth,
+          videoId: videoId,
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+
+        function onPlayerReady(event) {
+          event.target.playVideo();
+        }
+      }
 
 
 		initialize();

@@ -174,3 +174,69 @@ h1.header {
 .html5-video-player, .player-container {
   @apply rounded-xl aspect-video w-full h-full;
 }
+
+.letter {
+  @apply rounded-2xl border p-6 md:p-10;
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(1, 90, 78, 0.2);
+  background-color: #fdf7ea;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(253, 247, 234, 0.95)),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(1, 90, 78, 0.04) 0px,
+      rgba(1, 90, 78, 0.04) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+  box-shadow:
+    0 20px 40px rgba(1, 90, 78, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.letter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.6), transparent 45%);
+  mix-blend-mode: soft-light;
+}
+
+[data-mode='dark'] .letter {
+  background-color: #015a4e;
+  border-color: rgba(1, 90, 78, 0.35);
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.letter__header {
+  @apply mb-8 pb-6 border-b;
+  border-color: rgba(1, 90, 78, 0.2);
+}
+
+.letter__date {
+  @apply mt-0 mb-4 text-xs sm:text-sm tracking-[0.15em] uppercase text-main-green/70 dark:text-main-green/70;
+}
+
+.letter__title {
+  font-family: seratBold;
+  @apply text-4xl sm:text-5xl md:text-6xl leading-tight text-main-green;
+}
+
+.letter__body {
+  @apply space-y-5 md:space-y-7;
+}
+
+.letter__body p {
+  @apply mt-0 mb-0 text-base sm:text-lg lg:text-xl leading-relaxed text-secondary-text;
+}
+
+.letter__signature {
+  font-family: seratBold;
+  @apply text-2xl sm:text-3xl pt-3 text-main-green;
+}

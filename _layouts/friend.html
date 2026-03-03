@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="description" content="Vernes: Experienced Software Engineer with over 7 years of expertise. Dive deep into a portfolio showcasing prowess in Rails, frontend delights, and robust backend solutions. Let's build something great together!">
+  <meta name="author" content="Vernes Pendić">
+	<title>{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script src="https://kit.fontawesome.com/cd75f9f047.js" crossorigin="anonymous"></script>
+</head>
+<body class="transition-all bg-background dark:bg-main-green h-[100px] text-main-green max-w-[1500px] dark:text-fresh-green mx-auto">
+  <div class="absolute inset-0 z-0 animation-canvas pointer-events-none"></div>
+  <div class="absolute top-2 right-1">
+    {% include dark.html %}
+  </div>
+  <main class="mt-20 md:mx-10 mx-3 relative">
+    {{ content }}
+  </main>
+</body>
+
+<script>
+  function toggleDarkMode(checkbox) {
+    const html = document.querySelector('HTML')
+    const mode = checkbox.checked ? 'dark' : 'light'
+    html.dataset.mode = mode
+    localStorage.theme = mode
+  }
+</script>
+</html>

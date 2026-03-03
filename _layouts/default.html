@@ -78,5 +78,34 @@
 			io.observe(target);
 		}
 	});
+
+  const petraKeywords = ['petra klara', 'petraklara']
+  let typedBuffer = ''
+  const maxBufferLength = 30
+
+  function shouldIgnoreTypingEvent(event) {
+    const { target } = event
+    if (!target) return false
+
+    return target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)
+  }
+
+  window.addEventListener('keydown', (event) => {
+    if (event.ctrlKey || event.metaKey || event.altKey) return
+    if (shouldIgnoreTypingEvent(event)) return
+    if (event.key.length !== 1) return
+
+    typedBuffer += event.key.toLowerCase()
+    if (typedBuffer.length > maxBufferLength) {
+      typedBuffer = typedBuffer.slice(-maxBufferLength)
+    }
+
+    const normalizedBuffer = typedBuffer.replace(/[^a-z]/g, '')
+    const matchedKeyword = petraKeywords.find((keyword) => normalizedBuffer.endsWith(keyword))
+    if (!matchedKeyword) return
+    if (window.location.pathname === '/petra' || window.location.pathname === '/petra/') return
+
+    window.location.href = '/petra'
+  })
 </script>
 </html>
